@@ -16,7 +16,7 @@ function OutOfStock() {
             <main className={styles.main}>
                 <h2>Sorry! We&apos;re out of Stock</h2>
                 {/* <h2>Sorry! We're updating our content</h2> */}
-                <p className="lead">restoking agaain in 22 day</p>
+                <p className="lead">restoking again in 22 day</p>
             </main>
         </div>
     );

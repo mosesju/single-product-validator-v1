@@ -140,7 +140,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.img:hover{
+.img-hover:hover{
   color: #424242; 
   -webkit-transition: all .3s ease-in;
   -moz-transition: all .3s ease-in;

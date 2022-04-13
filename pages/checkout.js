@@ -16,7 +16,6 @@ function CheckoutPage() {
     const router = useRouter();
     const supabaseUrl = 'https://fvgexbvyzbrwwvywxfpq.supabase.co'
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY
-    console.log(supabaseKey)
     
 
     const { register, handleSubmit } = useForm();
@@ -61,7 +60,7 @@ function CheckoutPage() {
             <form className="needs-validation" onSubmit={ handleSubmit(onSubmit) }>
                 <div className="row">    
                     <div className="col-md-7">
-                        <h4 className="mb-3">Billing address</h4>
+                        <h4 className="mb-3">Delivery Information</h4>
                         
                             <div className="row">
                                 <div className="col-md-6 mb-3 ">
@@ -122,7 +121,7 @@ function CheckoutPage() {
                     <div className="col-md-5">
                         <div className="card">
                             <div className="card-body">
-                                <img  src="../public/assets/images/basil.jpeg" className="d-flex justify-content-center"/>
+                                <img  src="../public/assets/images/basil.jpeg" className="d-flex justify-content-center  img-hover"/>
                                 <h4 className="card-title">{ productNameVar }</h4>
                                 <h6>{ priceVar }</h6>
                                 <p className="card-text">Product Description</p>
