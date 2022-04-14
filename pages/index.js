@@ -51,7 +51,12 @@ export default function Home() {
 
         <header className="d-flex justify-content-center py-3">
             <ul className="nav nav-pills">
-            <li className="nav-item"><a href="#" className="nav-link" aria-current="page">Berlin Cookie Company</a></li>
+                <li className="nav-item">
+                    <Link href="#">
+                        <span style={{fontSize:'80px;'}}>&#127850;</span>
+                        {/* <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" /> */}
+                    </Link>
+                </li>
             </ul>
         </header>
         </section> 
@@ -63,7 +68,7 @@ export default function Home() {
                         <div className="row">
                             <main className="col-md-6">
                                 <article>
-                                    <h3 className="title">Great product name goes here</h3>
+                                    <h1 className="title">Cookies to your Door... Fast</h1>
                                     <div>
                                     {/* Not working out of the box */}
                                         <ul className="rating-stars">
@@ -79,10 +84,10 @@ export default function Home() {
                                     <hr />
                         
                                     <div className="mb-3">
-                                        <h6>Short description</h6>
+                                        <h6>Cookies so good you'll slap your grandma</h6>
                                         <ul className="list-dots mb-0">
-                                            <li className={styles.noBullet}>Made in Russia</li>
-                                            <li className={styles.noBullet}>Wolf leather </li>
+                                            <li className={styles.noBullet}>You before a Cookie &#128544;</li>
+                                            <li className={styles.noBullet}>You after a Cookie &#128522;&#128525;</li>
                                             <li className={styles.noBullet}>Rubber material bottom</li>
                                             <li className={styles.noBullet}>Dark blue color</li>
                                         </ul>
@@ -92,14 +97,14 @@ export default function Home() {
 
                                     </div>        
                                     <div className="mb-3">
-                                        <var className="price h4">$230.00</var> <br />
-                                        <span className="monthly">$32.00 / monthly <a href="#" className="btn-link">installment </a></span>
+                                        <var className="price h4">&#8352;20 / 12 Cookies</var> <br />
+                                        {/* <span className="monthly">$32.00 / monthly <a href="#" className="btn-link">installment </a></span> */}
                                     </div> 
             
                                     <div className="mb-4">
                                         <Link href="/checkout">
                                             <h5>
-                                                <button className="btn btn-primary mr-1 btn-lg btn-block">Get yours Delivered&#128666;</button>
+                                                <button className="btn btn-primary mr-1 btn-lg btn-block">Get warm Munchies Delivered&#128666;</button>
                                             </h5>
                                         </Link>
                                     </div>
@@ -120,7 +125,7 @@ export default function Home() {
                                                     />
                                                 </div>
                                                 <div className="col-md-3">
-                                                    <input className="btn btn-primary" type="submit" value="Get email Updates"/>
+                                                    <input className="btn btn-primary" type="submit" value="Your Cookie Updates"/>
                                                 </div>
                                             </div>
                                         </form>
@@ -150,15 +155,15 @@ export default function Home() {
                     <div className="row">
                         {/* Reviews */}
                         <aside className="col-md-6">
-                            <h5>Local Reviews</h5>
+                            <h5>Berlin Reviews</h5>
                                 <dl className="row">
                                     <div>
                                         <div className="row">
                                             <img class="rounded-circle img-fluid col-md-3" src="assets/img/1.jpg" maxWidth/>
                                             <div className="col-md-9">
-                                                <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                                                <p class="description">I was hungry... I was tired... and I then I was satisfied. Nothing like a fresh delivered cookie when your eyes are red and you can't make it past the door.</p>
                                                 <div className="row">
-                                                    <h6 class="title">Ben Johnson</h6>
+                                                    <h6 class="title">Alex Lemke</h6>
                                                     <small>Berlin, Schöneberg</small>   
                                                 </div>
                                                 
