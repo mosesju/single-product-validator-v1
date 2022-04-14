@@ -84,7 +84,7 @@ export default function Home() {
                                     <hr />
                         
                                     <div className="mb-3">
-                                        <h6>Cookies so good you'll slap your grandma</h6>
+                                        <h6>Cookies so good you&apos;ll slap your grandma</h6>
                                         <ul className="list-dots mb-0">
                                             <li className={styles.noBullet}>You before a Cookie &#128544;</li>
                                             <li className={styles.noBullet}>You after a Cookie &#128522;&#128525;</li>
@@ -159,11 +159,11 @@ export default function Home() {
                                 <dl className="row">
                                     <div>
                                         <div className="row">
-                                            <img class="rounded-circle img-fluid col-md-3" src="assets/img/1.jpg" maxWidth/>
+                                            <img className="rounded-circle img-fluid col-md-3" src="assets/img/1.jpg" maxWidth/>
                                             <div className="col-md-9">
-                                                <p class="description">I was hungry... I was tired... and I then I was satisfied. Nothing like a fresh delivered cookie when your eyes are red and you can't make it past the door.</p>
+                                                <p className="description">I was hungry... I was tired... and I then I was satisfied. Nothing like a fresh delivered cookie when your eyes are red and you can&apos;t make it past the door.</p>
                                                 <div className="row">
-                                                    <h6 class="title">Alex Lemke</h6>
+                                                    <h6 className="title">Alex Lemke</h6>
                                                     <small>Berlin, Schöneberg</small>   
                                                 </div>
                                                 
@@ -174,10 +174,10 @@ export default function Home() {
                                     <hr/>
                                     <div>
                                         <div className="row">
-                                            <img class="rounded-circle img-fluid col-md-3" src="assets/img/1.jpg" maxWidth/>
+                                            <img className="rounded-circle img-fluid col-md-3" src="assets/img/1.jpg" maxWidth/>
                                             <div className="col-md-9">
-                                                <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
-                                                <h6 class="title">Ben Johnson</h6>
+                                                <p className="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                                                <h6 className="title">Ben Johnson</h6>
                                                 <small>Berlin, Schöneberg</small>
                                             </div>
                                         </div>
