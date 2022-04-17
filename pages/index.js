@@ -43,7 +43,7 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
-
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         </Head>
 
         <main className={styles.main}>
@@ -68,7 +68,7 @@ export default function Home() {
                         <div className="row">
                             <main className="col-md-6">
                                 <article>
-                                    <h1 className="title">Cookies to your Door... Fast</h1>
+                                    <h1 className="title">Crack Cookies to your Door... Fast</h1>
                                     <div>
                                     {/* Not working out of the box */}
                                         <ul className="rating-stars">
@@ -84,12 +84,16 @@ export default function Home() {
                                     <hr />
                         
                                     <div className="mb-3">
-                                        <h6>Cookies so good you&apos;ll slap your grandma</h6>
+                                        <h6>Cookies so good you&apos;ll slap your grandma... and might end up on the street</h6>
                                         <ul className="list-dots mb-0">
-                                            <li className={styles.noBullet}>You before a Cookie &#128544;</li>
+                                            {/* <li className={styles.noBullet}>You before a Cookie &#128544;</li>
                                             <li className={styles.noBullet}>You after a Cookie &#128522;&#128525;</li>
                                             <li className={styles.noBullet}>Rubber material bottom</li>
-                                            <li className={styles.noBullet}>Dark blue color</li>
+                                            <li className={styles.noBullet}>Dark blue color</li> */}
+                                            <li className={styles.noBullet}>Chocolate Chip (The kind you dreamt about as a kid)</li>
+                                            <li className={styles.noBullet}>Oatmeal Raisin (For those of us with taste)</li>
+                                            <li className={styles.noBullet}>Snicker Doodle (Who knows what this is... it just tastes great)</li>
+                                            <li className={styles.noBullet}>Variety (For when you're feel indecisive)</li>
                                         </ul>
                                     </div>
                                     {/* Quantity Selection here */}
@@ -97,7 +101,7 @@ export default function Home() {
 
                                     </div>        
                                     <div className="mb-3">
-                                        <var className="price h4">&#8352;20 / 12 Cookies</var> <br />
+                                        <var className="price h4">&euro;20 / 12 Cookies</var> <br />
                                         {/* <span className="monthly">$32.00 / monthly <a href="#" className="btn-link">installment </a></span> */}
                                     </div> 
             
@@ -105,47 +109,93 @@ export default function Home() {
                                         <Link href="/checkout">
                                             <h5>
                                                 <button className="btn btn-primary mr-1 btn-lg btn-block">Get warm Munchies Delivered&#128666;</button>
+                                                <div className="alert alert-warning emailPadding" role="alert">
+                                                    We're running out of stock!
+                                                </div>
                                             </h5>
                                         </Link>
                                     </div>
-                                    <div>
-                                        <form onSubmit={ handleSubmit(onSubmit) }>
-                                            <label htmlFor="email">Email</label>
-                                            <div className="row">
-                                                <div className="col-md-8">
-                                                    <input 
-                                                        {...register("email", { required: true, maxLength: 20, // pattern: 
-                                                            // {
-                                                            //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                                            //     message: "invalid email address"
-                                                            // } 
-                                                        })} 
-                                                        className="form-control col-md-9"
-                                                        placeholder="you@example.com"
-                                                    />
-                                                </div>
-                                                <div className="col-md-3">
-                                                    <input className="btn btn-primary" type="submit" value="Your Cookie Updates"/>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                    
                                 </article> 
                             </main>
                             <aside className="col-md-6">
-                                    <article className="gallery-wrap">
-                                        <div className="card img-big-wrap">
-                                            <img src="http://s3-media1.ak.yelpcdn.com/bphoto/sMONYSiLUQEvooJ5hZh0Sw/l.jpg" className="img-fluid img-hover" alt=""  />
-                                        </div> 
-                                        <div className="row">
-                                            <div className="d-flex justify-content-center">
-                                                <img src="assets/images/basil.jpeg" className="img-fluid col-xs-4 img-hover" alt="" width="100" height="75" /> 
-                                                <img src="assets/images/basil.jpeg" className="img-fluid col-xs-4 img-hover" alt="" width="100" height="75" /> 
-                                                <img src="assets/images/basil.jpeg" className="img-fluid col-xs-4 img-hover" alt="" width="100" height="75"  />
+                                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item">
+                                        {/* <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
+                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide" />
+
+                                        <div class="container">
+                                            <div class="carousel-caption text-start">
+                                                <h1>You before Crack Cookies</h1>
+                                                <p>Some representative placeholder content for the first slide of the carousel.</p>
+                                                {/* <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p> */}
                                             </div>
                                         </div>
-                                        
-                                    </article>
+                                    </div>
+                                    <div class="carousel-item">
+                                        {/* <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
+                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide" />
+
+                                        <img className="bd-placeholder-img"/>
+                                        <div class="container">
+                                        <div class="carousel-caption">
+                                            <h1>You after Crack Cookies.</h1>
+                                            <p>Some representative placeholder content for the second slide of the carousel.</p>
+                                            {/* <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p> */}
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item active">
+                                        {/* <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
+                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide" />
+
+                                        <div class="container">
+                                        <div class="carousel-caption text-end">
+                                            <h1>One more for good measure.</h1>
+                                            <p>Some representative placeholder content for the third slide of this carousel.</p>
+                                            {/* <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> */}
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                </div>
+                                {/* Email Collection */}
+                                <div className="emailPadding">
+                                    <form onSubmit={ handleSubmit(onSubmit) }>
+                                        <label htmlFor="email">Email</label>
+                                        <div className="row">
+                                            <div className="col-md-8">
+                                                <input 
+                                                    {...register("email", { required: true, maxLength: 20, // pattern: 
+                                                        // {
+                                                        //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                                        //     message: "invalid email address"
+                                                        // } 
+                                                    })} 
+                                                    className="form-control col-md-9"
+                                                    placeholder="you@example.com"
+                                                />
+                                            </div>
+                                            <div className="col-md-3">
+                                                <input className="btn btn-primary" type="submit" value="Your Cookie Updates"/>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </aside>
                         </div> 
                 </div> 
@@ -207,28 +257,28 @@ export default function Home() {
                                 </h5>
                             </button>
                         </Link>
-                        <div>
-                                        <form onSubmit={ handleSubmit(onSubmit) }>
-                                            <label htmlFor="email">Email</label>
-                                            <div className="row">
-                                                <div className="col-md-8">
-                                                    <input 
-                                                        {...register("email", { required: true, maxLength: 20, // pattern: 
-                                                            // {
-                                                            //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                                            //     message: "invalid email address"
-                                                            // } 
-                                                        })} 
-                                                        className="form-control col-md-9"
-                                                        placeholder="you@example.com"
-                                                    />
-                                                </div>
-                                                <div className="col-md-3">
-                                                    <input className="btn btn-primary" type="submit" value="Get email Updates"/>
-                                                </div>
-                                            </div>
-                                        </form>
+                        <div className='emailPadding'>
+                            <form onSubmit={ handleSubmit(onSubmit) }>
+                                <label htmlFor="email">Email</label>
+                                <div className="row">
+                                    <div className="col-md-8">
+                                        <input 
+                                            {...register("email", { required: true, maxLength: 20, // pattern: 
+                                                // {
+                                                //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                                //     message: "invalid email address"
+                                                // } 
+                                            })} 
+                                            className="form-control col-md-9"
+                                            placeholder="you@example.com"
+                                        />
                                     </div>
+                                    <div className="col-md-3">
+                                        <input className="btn btn-primary" type="submit" value="Get email Updates"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     <hr />
                     <p>

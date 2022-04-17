@@ -14,9 +14,9 @@ function OutOfStock() {
 
             </Head>
             <main className={styles.main}>
-                <h2>Sorry! We&apos;re out of Stock</h2>
+                <h2 className="alert alert-danger" role="alert">Sorry! We&apos;re out of Stock</h2>
                 {/* <h2>Sorry! We're updating our content</h2> */}
-                <p className="lead">restoking agaain in 22 day</p>
+                <p className="lead">We will send you an email when we are ready to get you your Crack Cookies</p>
             </main>
         </div>
     );

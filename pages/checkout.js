@@ -20,27 +20,28 @@ function CheckoutPage() {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = async (formData) => {
-        const supabaseClient = createClient(supabaseUrl, supabaseKey)
-        console.log(supabaseClient);
+        // const supabaseClient = createClient(supabaseUrl, supabaseKey)
+        // console.log(supabaseClient);
 
 
-        const { data, error } = await supabaseClient
-        .from('Product Test')
-        .insert([
-            {
-                product: formData.product, 
-                price: formData.price,
-                quantity: formData.quantity,
-                firstName: formData.firstName,
-                lastName: formData.lastName,
-                email: formData.email,
-                address: formData.address,
-                city: formData.city,
-                state: formData.state,
-                country: formData.country,
-                discountCode: formData.discountCode
-            },
-        ])
+        // const { data, error } = await supabaseClient
+        // .from('Product Test')
+        // .insert([
+        //     {
+        //         product: formData.product, 
+        //         price: formData.price,
+        //         quantity: formData.quantity,
+        //         firstName: formData.firstName,
+        //         lastName: formData.lastName,
+        //         email: formData.email,
+        //         address: formData.address,
+        //         city: formData.city,
+        //         state: formData.state,
+        //         country: formData.country,
+        //         discountCode: formData.discountCode,
+        //         item: formData.item
+        //     },
+        // ])
 
         router.push(`/out-of-stock`)
 
@@ -122,16 +123,22 @@ function CheckoutPage() {
                         <div className="card">
                             <div className="card-body">
                                 <img  src="../public/assets/images/basil.jpeg" className="d-flex justify-content-center  img-hover"/>
-                                <h4 className="card-title">{ productNameVar }</h4>
-                                <h6>{ priceVar }</h6>
+                                <h4 className="card-title">Cookie Crisps</h4>
+                                <h6>&euro;20 for 12 cookies</h6>
                                 <p className="card-text">Product Description</p>
-                                <select className="custom-select d-block w-100" id="country" {...register("quantity")}>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                <select className="form-select d-block w-100" id="country" {...register("quantity")}>
+                                    <option value="3">3 Delicious Cookies (&euro;7)</option>
+                                    <option value="6">6 Warm Cookies (&euro;12)</option>
+                                    <option value="12">12 Gooey Cookies (&euro;20)</option>
+                                    <option value="18">18 Scrumptious Cookies (&euro;30)</option>
+                                    <option value="24">24 Rock you Socks off Cookies (&euro;36)</option>
                                 </select> 
+                                <select className="form-select d-block w-100" id="country" {...register("item")}>
+                                    <option value="ChocolateChip">Chocolate Chip</option>
+                                    <option value="OatmealRaisin">Oatmeal Raisin</option>
+                                    <option value="SnickerDoodle">Snicker Doodle</option>
+                                    <option value="Variety">Variety</option>
+                                </select>
                                 <label htmlFor="state">Enter your Discount Code</label>
                                 <input type="text" className="form-control" {...register("discountCode")} />
 
