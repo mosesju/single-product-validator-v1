@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import Script from 'next/script'
 
 import { useForm } from "react-hook-form";
 import { createClient } from '@supabase/supabase-js'
@@ -43,8 +44,8 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         </Head>
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossOrigin="anonymous"></Script>
 
         <main className={styles.main}>
         <section className="header-main border-bottom">
@@ -54,7 +55,7 @@ export default function Home() {
                 <li className="nav-item">
                     <Link href="#">
                         <span style={{fontSize:'80px;'}}>&#127850;</span>
-                        {/* <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" /> */}
+                        {/* <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt="" /> */}
                     </Link>
                 </li>
             </ul>
@@ -93,7 +94,7 @@ export default function Home() {
                                             <li className={styles.noBullet}>Chocolate Chip (The kind you dreamt about as a kid)</li>
                                             <li className={styles.noBullet}>Oatmeal Raisin (For those of us with taste)</li>
                                             <li className={styles.noBullet}>Snicker Doodle (Who knows what this is... it just tastes great)</li>
-                                            <li className={styles.noBullet}>Variety (For when you're feel indecisive)</li>
+                                            <li className={styles.noBullet}>Variety (For when you&apos;re feel indecisive)</li>
                                         </ul>
                                     </div>
                                     {/* Quantity Selection here */}
@@ -110,7 +111,7 @@ export default function Home() {
                                             <h5>
                                                 <button className="btn btn-primary mr-1 btn-lg btn-block">Get warm Munchies Delivered&#128666;</button>
                                                 <div className="alert alert-warning emailPadding" role="alert">
-                                                    We're running out of stock!
+                                                    We&apos;re running out of stock!
                                                 </div>
                                             </h5>
                                         </Link>
@@ -119,58 +120,58 @@ export default function Home() {
                                 </article> 
                             </main>
                             <aside className="col-md-6">
-                                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
+                                <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
+                                <div className="carousel-indicators">
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" className=""></button>
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" className="active" aria-current="true"></button>
                                 </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item">
-                                        {/* <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
-                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide" />
+                                <div className="carousel-inner">
+                                    <div className="carousel-item">
+                                        {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
+                                        <img className="d-block w-100" src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide" />
 
-                                        <div class="container">
-                                            <div class="carousel-caption text-start">
+                                        <div className="container">
+                                            <div className="carousel-caption text-start">
                                                 <h1>You before Crack Cookies</h1>
                                                 <p>Some representative placeholder content for the first slide of the carousel.</p>
-                                                {/* <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p> */}
+                                                {/* <p><a className="btn btn-lg btn-primary" href="#">Sign up today</a></p> */}
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="carousel-item">
-                                        {/* <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
-                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide" />
+                                    <div className="carousel-item">
+                                        {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
+                                        <img className="d-block w-100" src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide" />
 
                                         <img className="bd-placeholder-img"/>
-                                        <div class="container">
-                                        <div class="carousel-caption">
+                                        <div className="container">
+                                        <div className="carousel-caption">
                                             <h1>You after Crack Cookies.</h1>
                                             <p>Some representative placeholder content for the second slide of the carousel.</p>
-                                            {/* <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p> */}
+                                            {/* <p><a className="btn btn-lg btn-primary" href="#">Learn more</a></p> */}
                                         </div>
                                         </div>
                                     </div>
-                                    <div class="carousel-item active">
-                                        {/* <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
-                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide" />
+                                    <div className="carousel-item active">
+                                        {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
+                                        <img className="d-block w-100" src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="First slide" />
 
-                                        <div class="container">
-                                        <div class="carousel-caption text-end">
+                                        <div className="container">
+                                        <div className="carousel-caption text-end">
                                             <h1>One more for good measure.</h1>
                                             <p>Some representative placeholder content for the third slide of this carousel.</p>
-                                            {/* <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> */}
+                                            {/* <p><a className="btn btn-lg btn-primary" href="#">Browse gallery</a></p> */}
                                         </div>
                                         </div>
                                     </div>
                                     </div>
-                                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
+                                        <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span className="visually-hidden">Previous</span>
                                         </button>
-                                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
+                                        <button className="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span className="visually-hidden">Next</span>
                                         </button>
                                 </div>
                                 {/* Email Collection */}
