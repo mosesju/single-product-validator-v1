@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 
-import cookiesLogo from '../../public/assets/images/CookiesOnCrackLogo.png'
+import cookiesLogo from '../../public/assets/images/LogoDimensions.png'
 import coloredBackground from '../../public/assets/images/colored-background.png'
 
 export default function RefCodeButton() {

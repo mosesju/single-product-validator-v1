@@ -155,7 +155,7 @@
 }
 
 .gradientText {
-  background: -webkit-linear-gradient(left, #6A86FF 30%, #9C1CFF 60%);
+  background: -webkit-linear-gradient(left, #EA297B 5%, #32B0EB 90%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -173,6 +173,9 @@ li.noBullet {
 }
 .emailPadding {
   padding-top: 20px;
+}
+.BebasNeue {
+    font-family: 'Font Name', serif;
 }
 
 

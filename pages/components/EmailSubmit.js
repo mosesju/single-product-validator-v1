@@ -1,5 +1,26 @@
-export default function RefCodeButton() {
+import { createClient } from '@supabase/supabase-js'
+import { useForm } from "react-hook-form";
+
+export default function EmailSubmit() {
+    const { register, handleSubmit } = useForm();
+
+
+    const onSubmit = async (formData) => {
+        const supabaseClient = createClient(supabaseUrl, supabaseKey)
+
+        const { data, error } = await supabaseClient
+        .from('Product Test')
+        .insert([
+            {
+                email: formData.email,
+            },
+        ])
+
+        router.push(`/out-of-stock`)
+
+    }
     return (
+        
         <div className="emailPadding">
             <form onSubmit={ handleSubmit(onSubmit) }>
                 <label htmlFor="email">Email</label>

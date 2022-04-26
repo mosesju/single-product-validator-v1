@@ -14,6 +14,7 @@ import cookiesLogo from '../public/assets/images/CookiesOnCrackLogo.png'
 import coloredBackground from '../public/assets/images/colored-background.png'
 import RefCodeButton from './components/RefCodeButton'
 import Carousel from './components/Carousel'
+import EmailSubmit from './components/EmailSubmit'
 
 
 export default function Home() {
@@ -50,6 +51,7 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue"></link>
         </Head>
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossOrigin="anonymous"></Script>
 
@@ -71,78 +73,78 @@ export default function Home() {
 
             <article className="card">
                 <div className="card-body">
-                        <div className="row">
-                            <main className="col-md-6">
-                                <article>
-                                   
-                                    <Carousel />
-                                    {/* Email Collection */}
-                                    
-                                </article> 
+                    <div className="row">
+                        <main className="col-md-6">
+                            <article>
                                 
-                                {/* Email Collection + Share friends */}
-                                <div className="mb-4">
-                                        <Link href="/checkout">
-                                            <div>
-                                                <h5>
+                                <Carousel />
+                                {/* Email Collection */}
+                                
+                            </article> 
+                            
+                            {/* Email Collection + Share friends */}
+                            <div className="mb-4">
+                                    <Link href="/checkout">
+                                        <div>
+                                            <h5>
+                                                <div className='d-flex justify-content-center'>
                                                     <button className="btn-primary btn-lg btn-block">Get warm Cookies Delivered&#128666;</button>
-                                                    <div className="alert alert-warning emailPadding" role="alert">
-                                                        We&apos;re running out of stock!
-                                                    </div>
-                                                </h5>
-                                                
-                                            </div>
-                                        </Link>
-                                    </div>
+                                                </div>
+                                                <div className="alert alert-warning emailPadding" role="alert">
+                                                    We&apos;re running out of stock!
+                                                </div>
+                                            </h5>
+                                            
+                                        </div>
+                                    </Link>
+                                </div>
 
-                            </main>
-                            <aside className="col-md-6">
-                            <h1 className={`title ${styles.gradientText}`}>Warm, Tasty Cookies. First of May Special. </h1>
-                                    <h2 className={`${styles.gradientText}`}>Delivered to you, tonight... anywhere in Berlin.</h2>
-                                    <div>
-                                    {/* Not working out of the box */}
-                                        <ul className="rating-stars">
-                                            <li className={styles.noBullet}>
-                                                <i className="fa fa-star"></i><i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i><i className="fa fa-star"></i>
-                                                <i className="fa fa-star-half"></i>
-                                                <p><small>4.6 out of 5 stars based on 91 ratings</small></p>
-                                            </li>
-                                        </ul>
-                                    </div> 
-            
-                                    <hr />
-                        
-                                    <div className="mb-3">
-                                        <h5>Get Cookies when you want, fast</h5>
-                                        <p className='lead'>
-                                            It&apos;s the end of a long day. You go through your wind down routine... wait you forgot snacks.
-                                        </p>
-                                        <p>
+                        </main>
+                        <aside className="col-md-6">
+                            <div className='d-flex justify-content-center'>
+                                <h1 className={`title ${styles.gradientText} BebasNeue`}>We <strong>LOVE</strong> Berlin</h1>
+                            </div>
+                            <div className='d-flex justify-content-center'>
+                                <h2 className={`${styles.gradientText}`}>Try our Cookies... They&apos;ll blow your mind. </h2>
+                            </div>
+                            <div className='d-flex justify-content-center'>
+                                <h4 className='lead'>We&apos;re trying some new stuff for our Bakery based in Paris. Try it here first</h4>
+                            </div>
+                            <div>
+                            {/* Not working out of the box */}
+                                <ul className="rating-stars">
+                                    <li className={styles.noBullet}>
+                                        <i className="fa fa-star"></i><i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i><i className="fa fa-star"></i>
+                                        <i className="fa fa-star-half"></i>
+                                        <p><small>4.6 out of 5 stars based on 91 ratings</small></p>
+                                    </li>
+                                </ul>
+                            </div> 
+    
+                            <hr />
+                
+                            <div className="mb-3">
+                                <h5>Get Cookies Delivered for Free</h5>
+                                <p className='lead'>
+                                    It&apos;s the end of a long day. You go through your wind down routine... wait you forgot snacks.
+                                </p>
+                                <p className='lead'>
+                                    We got you! We ran a Pop and didn&apos;t expect to love Berlin as much as we did. Crack Cookies is selling 
+                                    in Berlin until Tuesday the third of May. 
+                                </p>
+                                <p className='lead'>
+                                    To order your new favorite Cookies, click the &apos;Get Warm Cookies Delivered Button&apos;
+                                    and fill out the form. Share your personal referral code and <strong>get another order delivered for free.</strong>
+                                </p>
+                            </div>
+                            {/* Quantity Selection here */}
+                            <div>
 
-                                        </p>
-                                    </div>
-                                    {/* Quantity Selection here */}
-                                    <div>
-
-                                    </div>        
-                                    <RefCodeButton />
-                                    {/* Email Collection + Share friends */}
-                                    {/* <div className="mb-4">
-                                        <Link href="/checkout">
-                                            <div>
-                                                <h5>
-                                                    <button className="btn-primary btn-lg btn-block">Get warm Cookies Delivered&#128666;</button>
-                                                    <div className="alert alert-warning emailPadding" role="alert">
-                                                        We&apos;re running out of stock!
-                                                    </div>
-                                                </h5>
-                                                
-                                            </div>
-                                        </Link>
-                                    </div> */}
-                            </aside>
-                        </div> 
+                            </div>        
+                            <RefCodeButton />
+                        </aside>
+                    </div> 
                 </div> 
             </article>
             <article className="card mt-5">
@@ -186,23 +188,11 @@ export default function Home() {
                         <aside className="col-md-6">
                             <h6>Cookies so good you might end up on the street</h6>
                             <ul className="list-dots mb-0">
-                                {/* <li className={styles.noBullet}>You before a Cookie &#128544;</li>
-                                <li className={styles.noBullet}>You after a Cookie &#128522;&#128525;</li>
-                                <li className={styles.noBullet}>Rubber material bottom</li>
-                                <li className={styles.noBullet}>Dark blue color</li> */}
                                 <li className={styles.noBullet}><strong>Chocolate Chip</strong> (The kind you dreamt about as a kid)</li>
                                 <li className={styles.noBullet}><strong>Oatmeal Raisin</strong> (For those of us with taste)</li>
                                 <li className={styles.noBullet}><strong>Snicker Doodle</strong> (Who knows what this is... it just tastes great)</li>
                                 <li className={styles.noBullet}><strong>Variety</strong> (For when you&apos;re feel indecisive)</li>
                             </ul>
-                            {/* <ul className="list-check">
-                                <li ></li>
-                                <li >5 years warranty for this product</li>
-                                <li >Amazing features and high quality</li>
-                                <li >Best performance of battery</li>
-                                <li >Best performance of battery</li>
-                                <li >5 years warranty for this product</li>
-                            </ul> */}
                         </aside>
                     </div> 
                     <hr />
@@ -214,28 +204,7 @@ export default function Home() {
                                 </h5>
                             </button>
                         </Link>
-                        <div className='emailPadding'>
-                            <form onSubmit={ handleSubmit(onSubmit) }>
-                                <label htmlFor="email">Email</label>
-                                <div className="row">
-                                    <div className="col-md-8">
-                                        <input 
-                                            {...register("email", { required: true, maxLength: 20, // pattern: 
-                                                // {
-                                                //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                                //     message: "invalid email address"
-                                                // } 
-                                            })} 
-                                            className="form-control col-md-9"
-                                            placeholder="you@example.com"
-                                        />
-                                    </div>
-                                    <div className="col-md-3">
-                                        <input className="btn btn-primary" type="submit" value="Get email Updates"/>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                        <EmailSubmit />
                     </div>
                     <hr />
                     <p>
