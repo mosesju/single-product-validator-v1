@@ -105,7 +105,7 @@ export default function Home() {
                                 <h1 className={`title ${styles.gradientText} BebasNeue`}>We <strong>LOVE</strong> Berlin</h1>
                             </div>
                             <div className='d-flex justify-content-center'>
-                                <h2 className={`${styles.gradientText}`}>Try our Cookies... They&apos;ll blow your mind. </h2>
+                                <h2 className={`${styles.gradientText}`}>Try our Cookies... They&apos;ll blow your mind (and are drug free)</h2>
                             </div>
                             <div className='d-flex justify-content-center'>
                                 <h4 className='lead'>We&apos;re trying some new stuff for our Bakery based in Paris. Try it here first</h4>
@@ -160,7 +160,7 @@ export default function Home() {
                                                 <Image  src={cookiesLogo} />
                                             </div>
                                             <div className="col-md-9">
-                                                <p className="description">I was hungry... I was tired... and I then I was satisfied. Nothing like a fresh delivered cookie when your eyes are red and you can&apos;t make it past the door.</p>
+                                                <p className="description">I was satisfied... shit was expensive but nothing is like a fresh delivered cookie when your eyes are red and you can&apos;t make it past the door.</p>
                                                 <div className="row">
                                                     <h6 className="title">Alex Lemke</h6>
                                                     <small>Berlin, Schöneberg</small>   
