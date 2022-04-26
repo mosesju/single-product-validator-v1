@@ -141,8 +141,10 @@ export default function Home() {
                             {/* Quantity Selection here */}
                             <div>
 
-                            </div>        
-                            <RefCodeButton />
+                            </div>    
+                            {/* This should be a different button */}
+                            {/* <RefCodeButton /> */}
+
                         </aside>
                     </div> 
                 </div> 
@@ -186,24 +188,38 @@ export default function Home() {
                             </dl>
                         </aside>
                         <aside className="col-md-6">
-                            <h6>Cookies so good you might end up on the street</h6>
-                            <ul className="list-dots mb-0">
+                            <h4>Cookies so good you might end up on the street</h4>
+                            <h5 className={ styles.textGradient }>Freebase Strawberry Cheesecake Cookie</h5>
+                            <h5 className={ styles.textGradient }>Berhain Backroom Snickerdoodle</h5>
+                            <h5 className={ styles.textGradient }>Relapse Raisin Cookie</h5>
+                            <h5 className={ styles.textGradient }>Comedown Caramel Cookie</h5>
+                            <h5 className={ styles.textGradient }>Crackhead Chocolate Chip</h5>
+
+                            <Link href="/checkout">
+                                <button className="btn btn-primary btn-lg btn-block">
+                                    <h5>
+                                        Get yours&#128666;
+                                    </h5>
+                                </button>
+                            </Link>
+
+                            {/* <ul className="list-dots mb-0">
                                 <li className={styles.noBullet}><strong>Chocolate Chip</strong> (The kind you dreamt about as a kid)</li>
                                 <li className={styles.noBullet}><strong>Oatmeal Raisin</strong> (For those of us with taste)</li>
                                 <li className={styles.noBullet}><strong>Snicker Doodle</strong> (Who knows what this is... it just tastes great)</li>
                                 <li className={styles.noBullet}><strong>Variety</strong> (For when you&apos;re feel indecisive)</li>
-                            </ul>
+                            </ul> */}
                         </aside>
                     </div> 
                     <hr />
                     <div className="row">
-                        <Link href="/checkout">
+                        {/* <Link href="/checkout">
                             <button className="btn btn-primary btn-lg btn-block">
                                 <h5>
                                     Get yours&#128666;
                                 </h5>
                             </button>
-                        </Link>
+                        </Link> */}
                         <EmailSubmit />
                     </div>
                     <hr />
@@ -233,7 +249,7 @@ export default function Home() {
             </div>
             <div className="container d-flex justify-content-center">
                 <p className="float-md-right"> 
-                &copy; Copyright 2021 All rights reserved
+                &copy; Copyright 2022 All rights reserved
             </p>
             </div>
         

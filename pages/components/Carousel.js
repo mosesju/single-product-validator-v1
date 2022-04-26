@@ -41,7 +41,7 @@ export default function RefCodeButton() {
                             src={ ChocoChip } 
                             alt="You after Cookies on Crack"
 
-                            // width = { 1470 }
+                            width = { 1470 }
                             height= { 980 } 
                             layout="responsive"
                         />
