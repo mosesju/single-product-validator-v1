@@ -154,6 +154,13 @@
 
 }
 
+.gradientText {
+  background: -webkit-linear-gradient(left, #6A86FF 30%, #9C1CFF 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 li.noBullet {
   list-style: none;
 }

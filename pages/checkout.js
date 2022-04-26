@@ -2,11 +2,14 @@
 import styles from '../styles/Checkout.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form";
 import { createClient } from '@supabase/supabase-js'
 import { Router } from 'next/router';
+
+import cookiesLogo from '../public/assets/images/CookiesOnCrackLogo.png'
 
 
 function CheckoutPage() {
@@ -20,32 +23,45 @@ function CheckoutPage() {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = async (formData) => {
-        // const supabaseClient = createClient(supabaseUrl, supabaseKey)
-        // console.log(supabaseClient);
+        const supabaseClient = createClient(supabaseUrl, supabaseKey)
+        console.log(supabaseClient);
 
 
-        // const { data, error } = await supabaseClient
-        // .from('Product Test')
-        // .insert([
-        //     {
-        //         product: formData.product, 
-        //         price: formData.price,
-        //         quantity: formData.quantity,
-        //         firstName: formData.firstName,
-        //         lastName: formData.lastName,
-        //         email: formData.email,
-        //         address: formData.address,
-        //         city: formData.city,
-        //         state: formData.state,
-        //         country: formData.country,
-        //         discountCode: formData.discountCode,
-        //         item: formData.item
-        //     },
-        // ])
+        const { data, error } = await supabaseClient
+        .from('Product Test')
+        .insert([
+            {
+                product: formData.product, 
+                price: formData.price,
+                quantity: formData.quantity,
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                email: formData.email,
+                address: formData.address,
+                city: formData.city,
+                // state: formData.state,
+                // country: formData.country,
+                discountCode: formData.discountCode,
+                item: formData.item
+            },
+        ])
 
         router.push(`/out-of-stock`)
 
     }
+    
+    function makeid(length) {
+        var result           = '';
+        var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+    
+
+    const refCode = makeid(5);
 
   return (
     <div className={styles.container}>
@@ -94,7 +110,7 @@ function CheckoutPage() {
 
                             <div className="mb-3">
                                 <label htmlFor="address">Address</label>
-                                <input className="form-control" id="address" placeholder="1234 Main St"  {...register("address", { required: true, maxLength: 20 })}/>
+                                <input className="form-control" id="address" placeholder="Hauptstrasse 12"  {...register("address", { required: true, maxLength: 30 })}/>
                                 
                             </div>
 
@@ -108,7 +124,7 @@ function CheckoutPage() {
                                     <label htmlFor="state">City</label>
                                     <input type="text" className="form-control" id="city" placeholder="" required="" {...register("city", { required: true, maxLength: 20 })}/>
                                 </div>
-                                <div className="col-md-4 mb-3">
+                                {/* <div className="col-md-4 mb-3">
                                     <label htmlFor="state">State</label>
                                     <input type="text" className="form-control" id="state" {...register("state", { required: true, maxLength: 20 })} />
                                 </div>
@@ -116,13 +132,15 @@ function CheckoutPage() {
                                     <label htmlFor="country">Country</label>
                                     <input type="text" className="form-control" id="country"  {...register("country", { required: true, maxLength: 20 })} />
 
-                                </div>
+                                </div> */}
                             </div>
                     </div>
                     <div className="col-md-5">
                         <div className="card">
                             <div className="card-body">
-                                <img  src="../public/assets/images/basil.jpeg" className="d-flex justify-content-center  img-hover"/>
+                                <div style={{width: '100%', height: '100%', position: 'relative'}}>
+                                    <Image src={cookiesLogo} layout='fill'/>
+                                </div>
                                 <h4 className="card-title">Cookie Crisps</h4>
                                 <h6>&euro;20 for 12 cookies</h6>
                                 <p className="card-text">Product Description</p>
@@ -139,9 +157,15 @@ function CheckoutPage() {
                                     <option value="SnickerDoodle">Snicker Doodle</option>
                                     <option value="Variety">Variety</option>
                                 </select>
-                                <label htmlFor="state">Enter your Discount Code</label>
+                                <label htmlFor="state">Enter your Referral Code <strong>(Both of you get free cookies)</strong></label>
                                 <input type="text" className="form-control" {...register("discountCode")} />
-
+                                <div>
+                                    {/* <strong>Share this code with your friends!</strong> */}
+                                    <h5 >
+                                        Your Referral Code <strong className={`${styles.gradientText}`}>{ makeid(5) }</strong> Share with friends and earn free cookies!
+                                    </h5>
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
