@@ -23,6 +23,8 @@ export default function Home() {
     const router = useRouter();
     const supabaseUrl = 'https://fvgexbvyzbrwwvywxfpq.supabase.co'
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY
+
+    
     
 
     const { register, handleSubmit } = useForm();
@@ -108,7 +110,9 @@ export default function Home() {
                                 <h2 className={`${styles.gradientText}`}>Try our Cookies... They&apos;ll blow your mind (and are drug free)</h2>
                             </div>
                             <div className='d-flex justify-content-center'>
-                                <h4 className='lead'>We&apos;re trying some new stuff for our Bakery based in Paris. Try it here first</h4>
+                                <h4 className='lead'>
+                                    We&apos;re trying some new stuff for our Bakery based in Paris. 
+                                </h4>
                             </div>
                             <div>
                             {/* Not working out of the box */}

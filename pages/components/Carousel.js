@@ -6,7 +6,7 @@ import coloredBackground from '../../public/assets/images/colored-background.png
 import StrawberryCheesecake from '../../public/assets/images/StrawberryCheesecake.gif'
 import ChocoChip from '../../public/assets/images/ChocoChip.png'
 
-export default function RefCodeButton() {
+export default function Carousel() {
     return (
             <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">

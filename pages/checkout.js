@@ -10,11 +10,16 @@ import { createClient } from '@supabase/supabase-js'
 import { Router } from 'next/router';
 
 import cookiesLogo from '../public/assets/images/CookiesOnCrackLogo.png'
+import RefCodeButton from './components/RefCodeButton'
+import { RWebShare } from "react-web-share";
+
 
 
 function CheckoutPage() {
-    const productNameVar = "Basil"
-    const priceVar = "4.99"
+    
+    const [refMessage, setRefMessage] = useState('Cookies on Crack - ');
+    const [refCode, setRefCode] = useState('00001');
+
 
     const router = useRouter();
     const supabaseUrl = 'https://fvgexbvyzbrwwvywxfpq.supabase.co'
@@ -31,7 +36,7 @@ function CheckoutPage() {
         .from('Product Test')
         .insert([
             {
-                product: formData.product, 
+                item: formData.product, 
                 price: formData.price,
                 quantity: formData.quantity,
                 firstName: formData.firstName,
@@ -42,14 +47,31 @@ function CheckoutPage() {
                 // state: formData.state,
                 // country: formData.country,
                 discountCode: formData.discountCode,
+                refCode: refCode,
                 item: formData.item
             },
         ])
 
-        router.push(`/out-of-stock`)
+        router.push({
+            pathname: '/out-of-stock', 
+            query: {
+                item: formData.product,
+                quantity: formData.quantity,
+                refCode: refCode
+            }
+        })
 
     }
-    
+
+    useEffect(()=>{
+        const refNum = makeid(5);
+        setRefCode(refNum)
+        const message = "Send this code to Buy one Get one"
+        const messageString = message.concat(' - ', refNum)
+        console.log(typeof(messageString))
+        setRefMessage(messageString)
+    }, [])
+
     function makeid(length) {
         var result           = '';
         var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -60,8 +82,6 @@ function CheckoutPage() {
         return result;
     }
     
-
-    const refCode = makeid(5);
 
   return (
     <div className={styles.container}>
@@ -161,9 +181,23 @@ function CheckoutPage() {
                                 <input type="text" className="form-control" {...register("discountCode")} />
                                 <div>
                                     {/* <strong>Share this code with your friends!</strong> */}
-                                    <h5 >
+                                    {/* <h5 >
                                         Your Referral Code <strong className={`${styles.gradientText}`}>{ makeid(5) }</strong> Share with friends and earn free cookies!
-                                    </h5>
+                                    </h5> */}
+                                    {/* <RefCodeButton /> */}
+                                    <div>
+                                        <RWebShare
+                                            data={{
+                                                text: { refMessage },
+                                                url: "http://localhost:3000/checkout",
+                                                title: "Cookies on Crack",
+                                            }}
+                                            onClick={() => console.log("shared successfully!")}
+                                        >
+                                            {/* Share with your friends and get <strong>FREE COOKIES</strong> */}
+                                            <button className='btn btn-outline-primary btn-block btn-lg' id="share-button"><strong className={`${styles.gradientText}`}>{ refMessage }</strong> </button>
+                                        </RWebShare>
+                                    </div>
                                     
                                 </div>
                             </div>

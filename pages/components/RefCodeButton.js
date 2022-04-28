@@ -4,10 +4,19 @@ import { RWebShare } from "react-web-share";
 
 
 export default function RefCodeButton() {
+    const [refCode, setRefCode] = useState('00000');
 
     useEffect(() =>{
-
-    })
+        setRefCode('00001')
+        // var result           = '';
+        // var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        // var charactersLength = characters.length;
+        // for ( var i = 0; i < length; i++ ) {
+        //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        // }
+        // console.log(result)
+        // setRefCode(result);
+    },[])
 
     return (
         <div>
@@ -19,7 +28,8 @@ export default function RefCodeButton() {
                 }}
                 onClick={() => console.log("shared successfully!")}
             >
-                <button className='btn-primary btn-block btn-lg' id="share-button">Share with your friends and get <strong>FREE COOKIES</strong></button>
+                {/* Share with your friends and get <strong>FREE COOKIES</strong> */}
+                <button className='btn-primary btn-block btn-lg' id="share-button">{ refCode } </button>
             </RWebShare>
         </div>
     )

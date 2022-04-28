@@ -55,3 +55,9 @@
   .title a:active {
     text-decoration: underline;
   }
+  .gradientText {
+    background: -webkit-linear-gradient(left, #EA297B 5%, #32B0EB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }

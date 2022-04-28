@@ -1,8 +1,21 @@
-import styles from '../styles/OutOfStock.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react';
+import { RWebShare } from "react-web-share";
+
+import styles from '../styles/OutOfStock.module.css'
 
 function OutOfStock() {
+    const router = useRouter()
+    const {item, quantity, refCode} = router.query
+    const [refMessage, setRefMessage] = useState('');
+
+    useEffect(()=>{
+        const message = "Share this code to Buy one Get one"
+        const messageString = message.concat(' - ', refCode)
+        setRefMessage(messageString)
+    },[])
     return (
         <div className={styles.container}>
             <Head>
@@ -14,9 +27,30 @@ function OutOfStock() {
 
             </Head>
             <main className={styles.main}>
-                <h2 className="alert alert-danger" role="alert">Sorry! We&apos;re out of Stock</h2>
+                <h1 className='gradientText'>We got your Order</h1>
+                <h2 >We will begin Delivery at 7am and 7pm through May 3.</h2>
+                <h3 className="alert alert-danger" role="alert">Pay with Cash on Delivery</h3>
                 {/* <h2>Sorry! We're updating our content</h2> */}
-                <p className="lead">We will send you an email when we are ready to get you your Crack Cookies</p>
+                <p className="lead">We will send you a message / call when we your Cookies are ready</p>
+                <p className='lead'>
+                    Your Cookies are being mixed by our 
+                    {/* How can we */}
+                </p>
+                <div>
+                <RWebShare
+                    data={{
+                        text: { refMessage },
+                        url: "http://localhost:3000/checkout",
+                        title: "Cookies on Crack",
+                    }}
+                    onClick={() => console.log("shared successfully!")}
+                >
+                    {/* Share with your friends and get <strong>FREE COOKIES</strong> */}
+                    <button className='btn btn-outline-primary btn-block btn-lg' id="share-button"><strong className={`${styles.gradientText}`}>{ refMessage }</strong> </button>
+                </RWebShare>
+                </div>
+
+                
             </main>
         </div>
     );
