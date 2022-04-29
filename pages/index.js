@@ -114,8 +114,7 @@ export default function Home() {
                                     We&apos;re trying some new stuff for our Bakery based in Paris. 
                                 </h4>
                             </div>
-                            <div>
-                            {/* Not working out of the box */}
+                            {/* <div>
                                 <ul className="rating-stars">
                                     <li className={styles.noBullet}>
                                         <i className="fa fa-star"></i><i className="fa fa-star"></i>
@@ -124,7 +123,7 @@ export default function Home() {
                                         <p><small>4.6 out of 5 stars based on 91 ratings</small></p>
                                     </li>
                                 </ul>
-                            </div> 
+                            </div>  */}
     
                             <hr />
                 
@@ -157,7 +156,7 @@ export default function Home() {
                 <div className="card-body">
                     <div className="row">
                         {/* Reviews */}
-                        <aside className="col-md-6">
+                        {/* <aside className="col-md-6">
                             <h5>Berlin Reviews</h5>
                                 <dl className="row">
                                     <div>
@@ -190,7 +189,7 @@ export default function Home() {
                                     </div>
                                 
                             </dl>
-                        </aside>
+                        </aside> */}
                         <aside className="col-md-6">
                             <h4>Cookies so good you might end up on the street</h4>
                             <h5 className={ styles.textGradient }>Freebase Strawberry Cheesecake Cookie</h5>
