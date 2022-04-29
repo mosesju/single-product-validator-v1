@@ -1,4 +1,4 @@
-import styles from '../styles/OutOfStock.module.css'
+import styles from '../public/styles/OutOfStock.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
 

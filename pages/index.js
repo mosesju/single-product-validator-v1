@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../public/styles/Home.module.css'
 import Link from 'next/link'
 import Script from 'next/script'
 
@@ -21,7 +21,7 @@ export default function Home() {
 
 
     const router = useRouter();
-    const supabaseUrl = 'https://fvgexbvyzbrwwvywxfpq.supabase.co'
+    const supabaseUrl = 'https://fvgexbvyzbRWebwvywxfpq.supabase.co'
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY
 
     
@@ -58,18 +58,6 @@ export default function Home() {
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossOrigin="anonymous"></Script>
 
         <main className={styles.main}>
-        <section className="header-main border-bottom">
-
-        {/* <header className="d-flex justify-content-center py-3">
-            <ul className="nav nav-pills">
-                <li className="nav-item">
-                    <Link href="#">
-                        <span style={{fontSize:'80px;'}}>&#127850;</span>
-                    </Link>
-                </li>
-            </ul>
-        </header> */}
-        </section> 
         <section className="section-content padding-y bg">
             <div className="container">
 
@@ -104,31 +92,20 @@ export default function Home() {
                         </main>
                         <aside className="col-md-6">
                             <div className='d-flex justify-content-center'>
-                                <h1 className={`title ${styles.gradientText} BebasNeue`}>We <strong>LOVE</strong> Berlin</h1>
+                                <h1 className={`title ${styles.gradientText} BebasNeue`}>Finger Lickin&apos; Addictin&apos;</h1>
                             </div>
                             <div className='d-flex justify-content-center'>
-                                <h2 className={`${styles.gradientText}`}>Try our Cookies... They&apos;ll blow your mind (and are drug free)</h2>
+                                <h2 className={`${styles.gradientText}`}>Try quittin&apos; you crackhead</h2>
+                                
                             </div>
-                            <div className='d-flex justify-content-center'>
-                                <h4 className='lead'>
-                                    We&apos;re trying some new stuff for our Bakery based in Paris. 
-                                </h4>
-                            </div>
-                            <div>
-                            {/* Not working out of the box */}
-                                <ul className="rating-stars">
-                                    <li className={styles.noBullet}>
-                                        <i className="fa fa-star"></i><i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i><i className="fa fa-star"></i>
-                                        <i className="fa fa-star-half"></i>
-                                        <p><small>4.6 out of 5 stars based on 91 ratings</small></p>
-                                    </li>
-                                </ul>
-                            </div> 
+                            {/* <div className='d-flex justify-content-center'>
+                                <h5 className={`${styles.gradientText}`}>(and are drug free)</h5>
+                            </div> */}
+                            
     
-                            <hr />
+                            {/* <hr /> */}
                 
-                            <div className="mb-3">
+                            {/* <div className="mb-3">
                                 <h5>Get Cookies Delivered for Free</h5>
                                 <p className='lead'>
                                     It&apos;s the end of a long day. You go through your wind down routine... wait you forgot snacks.
@@ -141,14 +118,31 @@ export default function Home() {
                                     To order your new favorite Cookies, click the &apos;Get Warm Cookies Delivered Button&apos;
                                     and fill out the form. Share your personal referral code and <strong>get another order delivered for free.</strong>
                                 </p>
-                            </div>
+                            </div> */}
                             {/* Quantity Selection here */}
-                            <div>
-
-                            </div>    
+                         
                             {/* This should be a different button */}
                             {/* <RefCodeButton /> */}
-
+                            <div>
+                                <ul className="rating-stars">
+                                    <li className={styles.noBullet}>
+                                        <i className="fa fa-star"></i><i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i><i className="fa fa-star"></i>
+                                        <i className="fa fa-star-half"></i>
+                                        <p><small>4.6 out of 5 stars based on 91 ratings</small></p>
+                                    </li>
+                                </ul>
+                            </div> 
+                            <hr />
+                            <div>
+                                {/* <h4 className={ styles.gradientText }>Cookies so good you might end up on the street</h4> */}
+                                <h4 >Menu</h4>
+                                <h5 className='lead'>Freebase Strawberry Cheesecake Cookie</h5>
+                                <h5 className='lead'>Berhain Backroom Snickerdoodle</h5>
+                                <h5 className='lead'>Relapse Raisin Cookie</h5>
+                                <h5 className='lead'>Comedown Caramel Cookie</h5>
+                                <h5 className='lead'>Crackhead Chocolate Chip</h5> 
+                            </div>
                         </aside>
                     </div> 
                 </div> 
@@ -163,7 +157,9 @@ export default function Home() {
                                     <div>
                                         <div className="row">
                                             <div className="rounded-circle img-fluid col-md-3">
-                                                <Image  src={cookiesLogo} />
+                                                <Image  
+                                                    src={cookiesLogo} 
+                                                />
                                             </div>
                                             <div className="col-md-9">
                                                 <p className="description">I was satisfied... shit was expensive but nothing is like a fresh delivered cookie when your eyes are red and you can&apos;t make it past the door.</p>
@@ -192,12 +188,12 @@ export default function Home() {
                             </dl>
                         </aside>
                         <aside className="col-md-6">
-                            <h4>Cookies so good you might end up on the street</h4>
-                            <h5 className={ styles.textGradient }>Freebase Strawberry Cheesecake Cookie</h5>
-                            <h5 className={ styles.textGradient }>Berhain Backroom Snickerdoodle</h5>
-                            <h5 className={ styles.textGradient }>Relapse Raisin Cookie</h5>
-                            <h5 className={ styles.textGradient }>Comedown Caramel Cookie</h5>
-                            <h5 className={ styles.textGradient }>Crackhead Chocolate Chip</h5>
+                                <h4 >Menu</h4>
+                                <h5 className='lead'>Freebase Strawberry Cheesecake Cookie</h5>
+                                <h5 className='lead'>Berhain Backroom Snickerdoodle</h5>
+                                <h5 className='lead'>Relapse Raisin Cookie</h5>
+                                <h5 className='lead'>Comedown Caramel Cookie</h5>
+                                <h5 className='lead'>Crackhead Chocolate Chip</h5>                            
 
                             <Link href="/checkout">
                                 <button className="btn btn-primary btn-lg btn-block">
@@ -215,15 +211,8 @@ export default function Home() {
                             </ul> */}
                         </aside>
                     </div> 
-                    <hr />
-                    <div className="row">
-                        {/* <Link href="/checkout">
-                            <button className="btn btn-primary btn-lg btn-block">
-                                <h5>
-                                    Get yours&#128666;
-                                </h5>
-                            </button>
-                        </Link> */}
+                    {/* <hr /> */}
+                    {/* <div className="row">
                         <EmailSubmit />
                     </div>
                     <hr />
@@ -234,7 +223,7 @@ export default function Home() {
                         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
+                    </p> */}
                 </div> 
             </article>
             </div>
