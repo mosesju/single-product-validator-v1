@@ -4,7 +4,8 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import { RWebShare } from "react-web-share";
 
-import styles from '../styles/OutOfStock.module.css'
+import styles from '../public/styles/OutOfStock.module.css'
+import RefCodeButton from './components/RefCodeButton';
 
 function OutOfStock() {
     const router = useRouter()
@@ -37,17 +38,7 @@ function OutOfStock() {
                     {/* How can we */}
                 </p>
                 <div>
-                <RWebShare
-                    data={{
-                        text: { refMessage },
-                        url: "http://localhost:3000/checkout",
-                        title: "Cookies on Crack",
-                    }}
-                    onClick={() => console.log("shared successfully!")}
-                >
-                    {/* Share with your friends and get <strong>FREE COOKIES</strong> */}
-                    <button className='btn btn-outline-primary btn-block btn-lg' id="share-button"><strong className={`${styles.gradientText}`}>{ refMessage }</strong> </button>
-                </RWebShare>
+                <RefCodeButton />
                 </div>
 
                 

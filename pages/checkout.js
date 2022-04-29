@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import styles from '../styles/Checkout.module.css'
+import styles from '../public/styles/Checkout.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -20,6 +20,7 @@ function CheckoutPage() {
     const [refMessage, setRefMessage] = useState('Cookies on Crack - ');
     const [refCode, setRefCode] = useState('00001');
 
+    const [refLink, setRefLink] = useState('');
 
     const router = useRouter();
     const supabaseUrl = 'https://fvgexbvyzbrwwvywxfpq.supabase.co'
@@ -29,8 +30,6 @@ function CheckoutPage() {
     const { register, handleSubmit } = useForm();
     const onSubmit = async (formData) => {
         const supabaseClient = createClient(supabaseUrl, supabaseKey)
-        console.log(supabaseClient);
-
 
         const { data, error } = await supabaseClient
         .from('Product Test')
@@ -68,7 +67,7 @@ function CheckoutPage() {
         setRefCode(refNum)
         const message = "Send this code to Buy one Get one"
         const messageString = message.concat(' - ', refNum)
-        console.log(typeof(messageString))
+        // console.log(typeof(messageString))
         setRefMessage(messageString)
     }, [])
 
@@ -81,7 +80,9 @@ function CheckoutPage() {
         }
         return result;
     }
-    
+    // function makeUrl() {
+    //     "https://cookiesoncrack.com/checkout"{``}
+    // }
 
   return (
     <div className={styles.container}>
@@ -186,17 +187,7 @@ function CheckoutPage() {
                                     </h5> */}
                                     {/* <RefCodeButton /> */}
                                     <div>
-                                        <RWebShare
-                                            data={{
-                                                text: { refMessage },
-                                                url: "http://localhost:3000/checkout",
-                                                title: "Cookies on Crack",
-                                            }}
-                                            onClick={() => console.log("shared successfully!")}
-                                        >
-                                            {/* Share with your friends and get <strong>FREE COOKIES</strong> */}
-                                            <button className='btn btn-outline-primary btn-block btn-lg' id="share-button"><strong className={`${styles.gradientText}`}>{ refMessage }</strong> </button>
-                                        </RWebShare>
+                                        <RefCodeButton />
                                     </div>
                                     
                                 </div>
