@@ -132,12 +132,7 @@ function CheckoutPage() {
                                 <div className="mb-3">
                                     <label htmlFor="email">Email</label>
                                     <input 
-                                        {...register("email", { required: true, maxLength: 20, // pattern: 
-                                            // {
-                                            //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                            //     message: "invalid email address"
-                                            // } 
-                                        })} 
+                                        {...register("email", { required: true, maxLength: 40})} 
                                         className="form-control"
                                         placeholder="you@example.com"
                                     />
