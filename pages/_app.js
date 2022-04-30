@@ -2,13 +2,11 @@ import '../public/styles/globals.css'
 import Script from "next/script"
 
 function MyApp({ Component, pageProps }) {
-  const gTagUrl = "https://www.googletagmanager.com/gtag/js?id="
-  gTagUrl.concat(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS)
   return(
 
     <>
-      <Script
-        src={ gTagUrl }
+      {/* <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -19,7 +17,7 @@ function MyApp({ Component, pageProps }) {
 
           gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
         `}
-       </Script>
+       </Script> */}
       {/* <Script async src={gTagUrl}></Script> 
       <Script id='google-analytics' strategy='lazyOnload'>
         {`

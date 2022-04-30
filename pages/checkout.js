@@ -1,9 +1,12 @@
 // import logo from './logo.svg';
 import styles from '../public/styles/Checkout.module.css'
+
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
+
 import { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form";
 import { createClient } from '@supabase/supabase-js'
@@ -92,6 +95,20 @@ function CheckoutPage() {
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
 
         </Head>
+        <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+            strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+            {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
+            `}
+        </Script>
+        
         <main className={styles.main}>
             <form className="needs-validation" onSubmit={ handleSubmit(onSubmit) }>
                 <div className="row">    
