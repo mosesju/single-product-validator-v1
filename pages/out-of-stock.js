@@ -48,7 +48,7 @@ function OutOfStock() {
                         <h2 >We will begin Delivery at 7am and 7pm through May 3.</h2>
                         <h3 className="alert alert-danger" role="alert">Pay with Cash on Delivery</h3>
                         {/* <h2>Sorry! We're updating our content</h2> */}
-                        <p className="lead">We will send you a message / call when we your Cookies are ready</p>
+                        <p className="lead">We will call when we your Cookies are ready</p>
                         <p className='lead'>
                         Somewhere deep in the Peruvian Rainforest, our farmers harvest the ingredients we need for your Cookies on Crack. Next our smugglers prepare our almost reliable smuggling routes across South America, the Atlantic and Europe to deliver the cookies. Then our plugs get them to you in Berlin. Hidden in between containers and cheeks we get them to you fresh and warm.  Enjoy your Cookies... and the rest of your night out or the end of your night.
 
