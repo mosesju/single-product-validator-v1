@@ -10,7 +10,6 @@ import { Router } from 'next/router';
 import { useRouter } from 'next/router'
 
 // Local shit
-import cookiesLogo from '../public/assets/images/CookiesOnCrackLogo.png'
 import coloredBackground from '../public/assets/images/colored-background.png'
 import RefCodeButton from './components/RefCodeButton'
 import Carousel from './components/Carousel'
@@ -123,7 +122,7 @@ export default function Home() {
                          
                             {/* This should be a different button */}
                             {/* <RefCodeButton /> */}
-                            <div>
+                            {/* <div>
                                 <ul className="rating-stars">
                                     <li className={styles.noBullet}>
                                         <i className="fa fa-star"></i><i className="fa fa-star"></i>
@@ -132,7 +131,7 @@ export default function Home() {
                                         <p><small>4.6 out of 5 stars based on 91 ratings</small></p>
                                     </li>
                                 </ul>
-                            </div> 
+                            </div>  */}
                             <hr />
                             <div>
                                 {/* <h4 className={ styles.gradientText }>Cookies so good you might end up on the street</h4> */}
@@ -147,86 +146,14 @@ export default function Home() {
                     </div> 
                 </div> 
             </article>
-            <article className="card mt-5">
-                <div className="card-body">
-                    <div className="row">
-                        {/* Reviews */}
-                        <aside className="col-md-6">
-                            <h5>Berlin Reviews</h5>
-                                <dl className="row">
-                                    <div>
-                                        <div className="row">
-                                            <div className="rounded-circle img-fluid col-md-3">
-                                                <Image  
-                                                    src={cookiesLogo} 
-                                                />
-                                            </div>
-                                            <div className="col-md-9">
-                                                <p className="description">I was satisfied... shit was expensive but nothing is like a fresh delivered cookie when your eyes are red and you can&apos;t make it past the door.</p>
-                                                <div className="row">
-                                                    <h6 className="title">Alex Lemke</h6>
-                                                    <small>Berlin, Schöneberg</small>   
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <hr/>
-                                    <div>
-                                        <div className="row">
-                                            <img className="rounded-circle img-fluid col-md-3" src="assets/img/1.jpg" maxWidth/>
-                                            <div className="col-md-9">
-                                                <p className="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
-                                                <h6 className="title">Ben Johnson</h6>
-                                                <small>Berlin, Schöneberg</small>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                
-                            </dl>
-                        </aside>
-                        <aside className="col-md-6">
-                                <h4 >Menu</h4>
-                                <h5 className='lead'>Freebase Strawberry Cheesecake Cookie</h5>
-                                <h5 className='lead'>Berhain Backroom Snickerdoodle</h5>
-                                <h5 className='lead'>Relapse Raisin Cookie</h5>
-                                <h5 className='lead'>Comedown Caramel Cookie</h5>
-                                <h5 className='lead'>Crackhead Chocolate Chip</h5>                            
+            <hr />
+            <p className='lead'>
+                Somewhere deep in the Peruvian Rainforest, our farmers harvest the ingredients we need for your Cookies on Crack. Next our smugglers prepare our almost reliable smuggling routes across South America, the Atlantic and Europe to deliver the cookies. Then our plugs get them to you in Berlin. Hidden in between containers and cheeks we get them to you fresh and warm.  Enjoy your Cookies... and the rest of your night out or the end of your night.
 
-                            <Link href="/checkout">
-                                <button className="btn btn-primary btn-lg btn-block">
-                                    <h5>
-                                        Get yours&#128666;
-                                    </h5>
-                                </button>
-                            </Link>
-
-                            {/* <ul className="list-dots mb-0">
-                                <li className={styles.noBullet}><strong>Chocolate Chip</strong> (The kind you dreamt about as a kid)</li>
-                                <li className={styles.noBullet}><strong>Oatmeal Raisin</strong> (For those of us with taste)</li>
-                                <li className={styles.noBullet}><strong>Snicker Doodle</strong> (Who knows what this is... it just tastes great)</li>
-                                <li className={styles.noBullet}><strong>Variety</strong> (For when you&apos;re feel indecisive)</li>
-                            </ul> */}
-                        </aside>
-                    </div> 
-                    {/* <hr /> */}
-                    {/* <div className="row">
-                        <EmailSubmit />
-                    </div>
-                    <hr />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p> */}
-                </div> 
-            </article>
-            </div>
+                </p> 
+            </div> 
+            {/* </article> */}
+            {/* </div> */}
             
 
         </section>

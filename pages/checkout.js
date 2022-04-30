@@ -9,7 +9,6 @@ import { useForm } from "react-hook-form";
 import { createClient } from '@supabase/supabase-js'
 import { Router } from 'next/router';
 
-import cookiesLogo from '../public/assets/images/CookiesOnCrackLogo.png'
 import RefCodeButton from './components/RefCodeButton'
 import { RWebShare } from "react-web-share";
 
@@ -80,9 +79,8 @@ function CheckoutPage() {
         }
         return result;
     }
-    // function makeUrl() {
-    //     "https://cookiesoncrack.com/checkout"{``}
-    // }
+    const CookiesLogo = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/CookiesOnCrackLogo.png'
+
 
   return (
     <div className={styles.container}>
@@ -160,7 +158,7 @@ function CheckoutPage() {
                         <div className="card">
                             <div className="card-body">
                                 <div style={{width: '100%', height: '100%', position: 'relative'}}>
-                                    <Image src={cookiesLogo} layout='fill'/>
+                                    <Image src={CookiesLogo} layout='fill'/>
                                 </div>
                                 <h4 className="card-title">Cookie Crisps</h4>
                                 <h6>&euro;20 for 12 cookies</h6>
