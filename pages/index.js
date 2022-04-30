@@ -14,6 +14,7 @@ import coloredBackground from '../public/assets/images/colored-background.png'
 import RefCodeButton from './components/RefCodeButton'
 import Carousel from './components/Carousel'
 import EmailSubmit from './components/EmailSubmit'
+import CheckoutButton from './components/CheckoutButton'
 
 
 export default function Home() {
@@ -87,19 +88,7 @@ export default function Home() {
                             
                             {/* Email Collection + Share friends */}
                             <div className="mb-4">
-                                    <Link href="/checkout">
-                                        <div>
-                                            <h5>
-                                                <div className='d-flex justify-content-center'>
-                                                    <button className="btn-primary btn-lg btn-block">Get warm Cookies Delivered&#128666;</button>
-                                                </div>
-                                                <div className="alert alert-warning emailPadding" role="alert">
-                                                    We&apos;re running out of stock!
-                                                </div>
-                                            </h5>
-                                            
-                                        </div>
-                                    </Link>
+                                    <CheckoutButton />
                                 </div>
 
                         </main>
