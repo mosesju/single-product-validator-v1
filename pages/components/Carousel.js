@@ -1,15 +1,11 @@
 import Image from 'next/image'
 
 import styles from '../../public/styles/Home.module.css'
-// import cookiesLogo from '../../public/assets/images/LogoDimensions.png'
-// import coloredBackground from '../../public/assets/images/colored-background.png'
-// import StrawberryCheesecake from '../../public/assets/images/StrawberryCheesecake.gif'
-// // import ChocoChip from '../../public/assets/images/ChocoChip.png'
 
 export default function Carousel() {
-    const cookiesLogo = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/CookiesOnCrackLogo.png'
-    const ChocoChip = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/cc.jpg'
-    const StrawberryCheesecake = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/strawrberrycheesecake.jpg'
+    const CookiesLogo = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/CookiesOnCrackLogo.png'
+    const ChocoChip = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/cc_final.jpg'
+    const StrawberryCheesecake = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/strawberry_final.jpg'
     return (
             <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">
@@ -31,14 +27,14 @@ export default function Carousel() {
                     />
                     <div className="container">
                         <div className="carousel-caption text-start">
-                        <h1 >You before Cookies on Crack &#128545;&#128520;</h1>
+                        {/* <h1 >You before Cookies on Crack &#128545;&#128520;</h1> */}
 
                             {/* <div className='d-flex justify-content-center'>
                                 <h1 className={`${styles.gradientText}`}>You before Cookies on Crack</h1>
                                 <h1> </h1>
                                 <h1></h1>
                             </div> */}
-                            <p >Hungry, angry, not having it</p>
+                            {/* <p >Hungry, angry, not having it</p> */}
                             {/* <p><a className="btn btn-lg btn-primary" href="#">Sign up today</a></p> */}
                         </div>
                     </div>
@@ -59,8 +55,8 @@ export default function Carousel() {
                         {/* <img className="bd-placeholder-img"/> */}
                         <div className="container">
                         <div className="carousel-caption">
-                            <h1 >You after Cookies on Crack &#128525;&#128526;</h1>
-                            <p >Feeling Goooooood</p>
+                            {/* <h1 >You after Cookies on Crack &#128525;&#128526;</h1>
+                            <p >Feeling Goooooood</p> */}
                             {/* <p><a className="btn btn-lg btn-primary" href="#">Learn more</a></p> */}
                         </div>
                         </div>
@@ -69,7 +65,7 @@ export default function Carousel() {
                 <div className="carousel-item active">
                     {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
                     <Image 
-                        src={cookiesLogo} 
+                        src={ CookiesLogo } 
                         width = { 1470 }
                         height= { 980 } 
                         layout="responsive"

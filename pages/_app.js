@@ -7,8 +7,20 @@ function MyApp({ Component, pageProps }) {
   return(
 
     <>
-      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <Script async src={gTagUrl}></Script>
+      <Script
+        src={ gTagUrl }
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
+        `}
+       </Script>
+      {/* <Script async src={gTagUrl}></Script> 
       <Script id='google-analytics' strategy='lazyOnload'>
         {`
           window.dataLayer = window.dataLayer || [];
@@ -18,7 +30,7 @@ function MyApp({ Component, pageProps }) {
           gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
         `}
         
-      </Script>
+      </Script> */}
       <Component {...pageProps} />
     </>
   )
