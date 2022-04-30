@@ -80,17 +80,8 @@ export default function Home() {
                     <div className="row">
                         <main className="col-md-6">
                             <article>
-                                
                                 <Carousel />
-                                {/* Email Collection */}
-                                
                             </article> 
-                            
-                            {/* Email Collection + Share friends */}
-                            {/* <div className="mb-4">
-                                    <CheckoutButton />
-                                </div> */}
-
                         </main>
                         <aside className="col-md-6">
                             <div className='d-flex justify-content-center'>
@@ -102,13 +93,15 @@ export default function Home() {
                             <div className='d-flex justify-content-center'>
                                 <CheckoutButton />
                             </div>
-                            <div>
-                                <h4 >Menu</h4>
-                                <h5 className='lead'>Freebase Strawberry Cheesecake Cookie</h5>
-                                <h5 className='lead'>Berhain Backroom Snickerdoodle</h5>
-                                <h5 className='lead'>Relapse Raisin Cookie</h5>
-                                <h5 className='lead'>Comedown Caramel Cookie</h5>
-                                <h5 className='lead'>Crackhead Chocolate Chip</h5> 
+                            <div className='d-flex justify-content-center'>
+                                <div>
+                                    <h4 >Menu</h4>
+                                    <h5 className='lead'>Freebase Strawberry Cheesecake Cookie</h5>
+                                    <h5 className='lead'>Berghain Backroom Snickerdoodle</h5>
+                                    <h5 className='lead'>Relapse Raisin Cookie</h5>
+                                    <h5 className='lead'>Comedown Caramel Cookie</h5>
+                                    <h5 className='lead'>Crackhead Chocolate Chip</h5> 
+                                </div>  
                             </div>
 
                         </aside>
@@ -134,7 +127,7 @@ export default function Home() {
             <p>
                 <Link href="/terms-conditions">
                     Terms and conditions
-                    </Link>
+                </Link>
             </p>
             </div>
             <div className="container d-flex justify-content-center">

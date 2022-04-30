@@ -62,3 +62,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .selectorSpacing {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+.buttonSpacing {
+  padding-top: 20px;
+}

@@ -31,7 +31,7 @@ export default function RefCodeButton() {
                 }}
                 onClick={() => console.log("shared successfully!")}
             >
-                <button className='btn btn-outline-primary btn-block btn-lg' id="share-button">Share this page to get twice as many cookies delivered</button>
+                <button className='btn btn-outline-primary btn-block btn-lg' id="share-button">Share this for a Buy One Get One offer</button>
             </RWebShare>
         </div>
     )

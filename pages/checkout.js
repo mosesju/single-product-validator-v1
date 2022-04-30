@@ -45,8 +45,7 @@ function CheckoutPage() {
                 email: formData.email,
                 address: formData.address,
                 city: formData.city,
-                // state: formData.state,
-                // country: formData.country,
+                notes: formData.notes,
                 discountCode: formData.discountCode,
                 refCode: refCode,
                 item: formData.item
@@ -110,110 +109,118 @@ function CheckoutPage() {
         </Script>
         
         <main className={styles.main}>
-            <form className="needs-validation" onSubmit={ handleSubmit(onSubmit) }>
-                <div className="row">    
-                    <div className="col-md-7">
-                        <h4 className="mb-3">Delivery Information</h4>
-                        
-                            <div className="row">
-                                <div className="col-md-6 mb-3 ">
-                                
-                                    <label htmlFor="firstName">First name</label>
-                                    <input {...register("firstName", { required: true, maxLength: 20 })} className="form-control"/>
+            <div className='container'>
+                <form className="needs-validation" onSubmit={ handleSubmit(onSubmit) }>
+                    <div className="row">    
+                        <div className="col-md-7">
+                            <h4 className={`mb-3 ${styles.gradientText}`}>Delivery Information</h4>
+                            
+                                <div className="row">
+                                    <div className="col-md-6 mb-3 ">
+                                    
+                                        <label htmlFor="firstName">First name</label>
+                                        <input {...register("firstName", { required: true, maxLength: 20 })} className="form-control"/>
 
+                                    </div>
+                                    <div className="col-md-6 mb-3">
+                                        <label htmlFor="lastName">Last name</label>
+                                        <input {...register("lastName", { required: true, maxLength: 20 })} className="form-control" />
+                                        
+                                    </div>
                                 </div>
-                                <div className="col-md-6 mb-3">
-                                    <label htmlFor="lastName">Last name</label>
-                                    <input {...register("lastName", { required: true, maxLength: 20 })} className="form-control" />
+
+                                <div className="mb-3">
+                                    <label htmlFor="email">Email</label>
+                                    <input 
+                                        {...register("email", { required: true, maxLength: 20, // pattern: 
+                                            // {
+                                            //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                            //     message: "invalid email address"
+                                            // } 
+                                        })} 
+                                        className="form-control"
+                                        placeholder="you@example.com"
+                                    />
                                     
                                 </div>
-                            </div>
 
-                            <div className="mb-3">
-                                <label htmlFor="email">Email</label>
-                                <input 
-                                    {...register("email", { required: true, maxLength: 20, // pattern: 
-                                        // {
-                                        //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                        //     message: "invalid email address"
-                                        // } 
-                                    })} 
-                                    className="form-control"
-                                    placeholder="you@example.com"
-                                />
+                                <div className="mb-3">
+                                    <label htmlFor="address">Address</label>
+                                    <input className="form-control" id="address" placeholder="Hauptstrasse 12"  {...register("address", { required: true, maxLength: 30 })}/>
+                                    
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="address2">Address 2 <span className="text-muted">(Optional)</span></label>
+                                    <input type="text" className="form-control" placeholder="Apartment or suite" />
+                                </div>
+
+                                <div className="row">
+                                    <div className="col-md-4 mb-3">
+                                        <label htmlFor="state">City</label>
+                                        <input type="text" className="form-control" id="city" placeholder="" required="" {...register("city", { required: true, maxLength: 20 })}/>
+                                    </div>
+                                    
+                                </div>
+                                {/* className="col-md-4 mb-3" */}
+                                <div >
+                                    <label htmlFor="notes">Notes</label>
+                                    <input type="text" className="form-control" id="notes" placeholder="" required="" {...register("notes", { required: false})}/>
+                                </div>
+                                <div className={styles.buttonSpacing}>
+                                    <div className='d-flex justify-content-center'>
+                                        <input className="btn btn-primary btn-lg " type="submit" value="Continue to checkout"/>
+                                    </div>
+                                </div>
                                 
-                            </div>
-
-                            <div className="mb-3">
-                                <label htmlFor="address">Address</label>
-                                <input className="form-control" id="address" placeholder="Hauptstrasse 12"  {...register("address", { required: true, maxLength: 30 })}/>
-                                
-                            </div>
-
-                            <div className="mb-3">
-                                <label htmlFor="address2">Address 2 <span className="text-muted">(Optional)</span></label>
-                                <input type="text" className="form-control" placeholder="Apartment or suite" />
-                            </div>
-
-                            <div className="row">
-                                <div className="col-md-4 mb-3">
-                                    <label htmlFor="state">City</label>
-                                    <input type="text" className="form-control" id="city" placeholder="" required="" {...register("city", { required: true, maxLength: 20 })}/>
-                                </div>
-                                {/* <div className="col-md-4 mb-3">
-                                    <label htmlFor="state">State</label>
-                                    <input type="text" className="form-control" id="state" {...register("state", { required: true, maxLength: 20 })} />
-                                </div>
-                                <div className="col-md-4 mb-3">
-                                    <label htmlFor="country">Country</label>
-                                    <input type="text" className="form-control" id="country"  {...register("country", { required: true, maxLength: 20 })} />
-
-                                </div> */}
-                            </div>
-                    </div>
-                    <div className="col-md-5">
-                        <div className="card">
-                            <div className="card-body">
-                                <div style={{width: '100%', height: '100%', position: 'relative'}}>
-                                    <Image src={CookiesLogo} layout='fill'/>
-                                </div>
-                                <h4 className="card-title">Cookie Crisps</h4>
-                                <h6>&euro;20 for 12 cookies</h6>
-                                <p className="card-text">Product Description</p>
-                                <select className="form-select d-block w-100" id="country" {...register("quantity")}>
-                                    <option value="3">3 Delicious Cookies (&euro;7)</option>
-                                    <option value="6">6 Warm Cookies (&euro;12)</option>
-                                    <option value="12">12 Gooey Cookies (&euro;20)</option>
-                                    <option value="18">18 Scrumptious Cookies (&euro;30)</option>
-                                    <option value="24">24 Rock you Socks off Cookies (&euro;36)</option>
-                                </select> 
-                                <select className="form-select d-block w-100" id="country" {...register("item")}>
-                                    <option value="ChocolateChip">Chocolate Chip</option>
-                                    <option value="OatmealRaisin">Oatmeal Raisin</option>
-                                    <option value="SnickerDoodle">Snicker Doodle</option>
-                                    <option value="Variety">Variety</option>
-                                </select>
-                                <label htmlFor="state">Enter your Referral Code <strong>(Both of you get free cookies)</strong></label>
-                                <input type="text" className="form-control" {...register("discountCode")} />
-                                <div>
-                                    {/* <strong>Share this code with your friends!</strong> */}
-                                    {/* <h5 >
-                                        Your Referral Code <strong className={`${styles.gradientText}`}>{ makeid(5) }</strong> Share with friends and earn free cookies!
-                                    </h5> */}
-                                    {/* <RefCodeButton /> */}
+                        </div>
+                        <div className="col-md-5">
+                            <div className="card">
+                                <div className="card-body">
+                                    <div style={{width: '100%', height: '100%', position: 'relative'}}>
+                                        <Image src={CookiesLogo} layout='fill'/>
+                                    </div>
+                                    <h4 className="card-title">Cookies on Crack</h4>
+                                    <h6>&euro;20 for 12 cookies</h6>
+                                    <p className="lead">
+                                        Do you like cookies? Do you like crack? Then we got the perfect blend of both for you! Try out our different creations guaranteed to satisfy that itch. Soft and fresh we have something to fulfill every need of yours. Get them before we sell out… 
+                                    </p>
+                                    <div className={styles.selectorSpacing}>
+                                        <select className="form-select d-block w-100" id="country" {...register("quantity")}>
+                                            <option value="12">The Ounce (&euro;20 for 20 cookies)</option>
+                                            <option value="3">The 8 Ball  (&euro;7 for 3 cookies)</option>
+                                            <option value="6">The Quarter (&euro;12 for 6 cookies)</option>
+                                            <option value="18">The Plug (&euro;30 for 18 cookies)</option>
+                                            <option value="24">The Brick (&euro;36 for 24 cookies)</option>
+                                        </select> 
+                                    </div>
+                                    <div className={styles.selectorSpacing}>
+                                        <select className="form-select d-block w-100" id="country" {...register("item")}>
+                                            <option value="Strawberry Cheesecake">Freebase Strawberry Cheesecake Cookie</option>
+                                            <option value="Oatmeal Raisin">Berghain Backroom Snickerdoodle</option>
+                                            <option value="Snicker Doodle">Relapse Raisin Cookie</option>
+                                            <option value="Caramel">Comedown Caramel Cookie</option>
+                                            <option value="Chocolate Chip">Crackhead Chocolate Chip</option>
+                                            <option value="Surprise Me">Surprise Me! Variety Pack</option>
+                                        </select>
+                                    </div>
                                     <div>
-                                        <RefCodeButton />
+                                        <label htmlFor="state">Use a Referral code to Buy One Get One</label>
+                                        <input type="text" className="form-control" {...register("discountCode")} />
+                                        <div className={styles.buttonSpacing}>
+                                            <RefCodeButton />
+                                        </div>
                                     </div>
                                     
                                 </div>
                             </div>
+                            
                         </div>
+                       
+                    
                     </div>
-                
-                    <input className="btn btn-primary btn-lg btn-block" type="submit" value="Continue to checkout"/>
-                
-                </div>
-            </form>
+                </form>
+            </div>
         </main>    
     </div>
   );

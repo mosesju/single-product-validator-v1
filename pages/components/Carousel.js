@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../../public/styles/Home.module.css'
 
 export default function Carousel() {
-    const CookiesLogo = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/CookiesOnCrackLogo.png'
+    const CookiesLogo = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/logo_final.jpg'
     const ChocoChip = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/cc_final.jpg'
     const StrawberryCheesecake = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/strawberry_final.jpg'
     return (
@@ -45,7 +45,6 @@ export default function Carousel() {
                         <Image 
                             src={ ChocoChip } 
                             alt="You after Cookies on Crack"
-
                             width = { 1470 }
                             height= { 980 } 
                             layout="responsive"
@@ -65,8 +64,8 @@ export default function Carousel() {
                 <div className="carousel-item active">
                     {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> */}
                     <Image 
-                        src={ CookiesLogo } 
-                        width = { 1470 }
+                        src={ CookiesLogo }
+                        width = { 1470 } 
                         height= { 980 } 
                         layout="responsive"
                     />

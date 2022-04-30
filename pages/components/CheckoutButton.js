@@ -11,9 +11,6 @@ export default function RefCodeButton() {
                         <div className={`d-flex justify-content-center ${styles.checkoutButtonPadding} `}>
                             <button className="btn-primary btn-lg btn-block">Get warm Cookies now&#128666;</button>
                         </div>
-                        <div className="alert alert-warning" role="alert">
-                            We&apos;re running out of stock!
-                        </div>
                     </h5>
                     
                 </div>
