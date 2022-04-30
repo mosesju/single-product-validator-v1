@@ -1,10 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Script from 'next/script'
+
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import { RWebShare } from "react-web-share";
 
-import styles from '../styles/OutOfStock.module.css'
+import styles from '../public/styles/OutOfStock.module.css'
+import RefCodeButton from './components/RefCodeButton';
 
 function OutOfStock() {
     const router = useRouter()
@@ -24,8 +27,20 @@ function OutOfStock() {
                 <link rel="icon" href="/favicon.ico" />
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
                 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
-
             </Head>
+            <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+                strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
+                `}
+            </Script>
             <main className={styles.main}>
                 <h1 className='gradientText'>We got your Order</h1>
                 <h2 >We will begin Delivery at 7am and 7pm through May 3.</h2>
@@ -37,17 +52,7 @@ function OutOfStock() {
                     {/* How can we */}
                 </p>
                 <div>
-                <RWebShare
-                    data={{
-                        text: { refMessage },
-                        url: "http://localhost:3000/checkout",
-                        title: "Cookies on Crack",
-                    }}
-                    onClick={() => console.log("shared successfully!")}
-                >
-                    {/* Share with your friends and get <strong>FREE COOKIES</strong> */}
-                    <button className='btn btn-outline-primary btn-block btn-lg' id="share-button"><strong className={`${styles.gradientText}`}>{ refMessage }</strong> </button>
-                </RWebShare>
+                <RefCodeButton />
                 </div>
 
                 

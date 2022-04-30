@@ -1,15 +1,17 @@
 // import logo from './logo.svg';
-import styles from '../styles/Checkout.module.css'
+import styles from '../public/styles/Checkout.module.css'
+
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
+
 import { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form";
 import { createClient } from '@supabase/supabase-js'
 import { Router } from 'next/router';
 
-import cookiesLogo from '../public/assets/images/CookiesOnCrackLogo.png'
 import RefCodeButton from './components/RefCodeButton'
 import { RWebShare } from "react-web-share";
 
@@ -20,6 +22,7 @@ function CheckoutPage() {
     const [refMessage, setRefMessage] = useState('Cookies on Crack - ');
     const [refCode, setRefCode] = useState('00001');
 
+    const [refLink, setRefLink] = useState('');
 
     const router = useRouter();
     const supabaseUrl = 'https://fvgexbvyzbrwwvywxfpq.supabase.co'
@@ -29,8 +32,6 @@ function CheckoutPage() {
     const { register, handleSubmit } = useForm();
     const onSubmit = async (formData) => {
         const supabaseClient = createClient(supabaseUrl, supabaseKey)
-        console.log(supabaseClient);
-
 
         const { data, error } = await supabaseClient
         .from('Product Test')
@@ -68,7 +69,7 @@ function CheckoutPage() {
         setRefCode(refNum)
         const message = "Send this code to Buy one Get one"
         const messageString = message.concat(' - ', refNum)
-        console.log(typeof(messageString))
+        // console.log(typeof(messageString))
         setRefMessage(messageString)
     }, [])
 
@@ -81,7 +82,8 @@ function CheckoutPage() {
         }
         return result;
     }
-    
+    const CookiesLogo = 'https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/CookiesOnCrackLogo.png'
+
 
   return (
     <div className={styles.container}>
@@ -93,6 +95,20 @@ function CheckoutPage() {
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
 
         </Head>
+        <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+            strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+            {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
+            `}
+        </Script>
+        
         <main className={styles.main}>
             <form className="needs-validation" onSubmit={ handleSubmit(onSubmit) }>
                 <div className="row">    
@@ -159,7 +175,7 @@ function CheckoutPage() {
                         <div className="card">
                             <div className="card-body">
                                 <div style={{width: '100%', height: '100%', position: 'relative'}}>
-                                    <Image src={cookiesLogo} layout='fill'/>
+                                    <Image src={CookiesLogo} layout='fill'/>
                                 </div>
                                 <h4 className="card-title">Cookie Crisps</h4>
                                 <h6>&euro;20 for 12 cookies</h6>
@@ -186,17 +202,7 @@ function CheckoutPage() {
                                     </h5> */}
                                     {/* <RefCodeButton /> */}
                                     <div>
-                                        <RWebShare
-                                            data={{
-                                                text: { refMessage },
-                                                url: "http://localhost:3000/checkout",
-                                                title: "Cookies on Crack",
-                                            }}
-                                            onClick={() => console.log("shared successfully!")}
-                                        >
-                                            {/* Share with your friends and get <strong>FREE COOKIES</strong> */}
-                                            <button className='btn btn-outline-primary btn-block btn-lg' id="share-button"><strong className={`${styles.gradientText}`}>{ refMessage }</strong> </button>
-                                        </RWebShare>
+                                        <RefCodeButton />
                                     </div>
                                     
                                 </div>

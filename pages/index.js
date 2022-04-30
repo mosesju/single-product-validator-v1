@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../public/styles/Home.module.css'
 import Link from 'next/link'
 import Script from 'next/script'
 
@@ -10,7 +10,6 @@ import { Router } from 'next/router';
 import { useRouter } from 'next/router'
 
 // Local shit
-import cookiesLogo from '../public/assets/images/CookiesOnCrackLogo.png'
 import coloredBackground from '../public/assets/images/colored-background.png'
 import RefCodeButton from './components/RefCodeButton'
 import Carousel from './components/Carousel'
@@ -21,7 +20,7 @@ export default function Home() {
 
 
     const router = useRouter();
-    const supabaseUrl = 'https://fvgexbvyzbrwwvywxfpq.supabase.co'
+    const supabaseUrl = 'https://fvgexbvyzbRWebwvywxfpq.supabase.co'
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY
 
     
@@ -55,21 +54,23 @@ export default function Home() {
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue"></link>
         </Head>
+
+        <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+            strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+            {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
+            `}
+        </Script>
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossOrigin="anonymous"></Script>
 
         <main className={styles.main}>
-        <section className="header-main border-bottom">
-
-        {/* <header className="d-flex justify-content-center py-3">
-            <ul className="nav nav-pills">
-                <li className="nav-item">
-                    <Link href="#">
-                        <span style={{fontSize:'80px;'}}>&#127850;</span>
-                    </Link>
-                </li>
-            </ul>
-        </header> */}
-        </section> 
         <section className="section-content padding-y bg">
             <div className="container">
 
@@ -104,49 +105,13 @@ export default function Home() {
                         </main>
                         <aside className="col-md-6">
                             <div className='d-flex justify-content-center'>
-                                <h1 className={`title ${styles.gradientText} BebasNeue`}>We <strong>LOVE</strong> Berlin</h1>
+                                <h1 className={`title ${styles.gradientText} BebasNeue`}>Finger Lickin&apos; Addictin&apos;</h1>
                             </div>
                             <div className='d-flex justify-content-center'>
-                                <h2 className={`${styles.gradientText}`}>Try our Cookies... They&apos;ll blow your mind (and are drug free)</h2>
+                                <h2 className={`${styles.gradientText}`}>Try quittin&apos; you crackhead</h2>
+                                
                             </div>
-                            <div className='d-flex justify-content-center'>
-                                <h4 className='lead'>
-                                    We&apos;re trying some new stuff for our Bakery based in Paris. 
-                                </h4>
-                            </div>
-                            {/* <div>
-                                <ul className="rating-stars">
-                                    <li className={styles.noBullet}>
-                                        <i className="fa fa-star"></i><i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i><i className="fa fa-star"></i>
-                                        <i className="fa fa-star-half"></i>
-                                        <p><small>4.6 out of 5 stars based on 91 ratings</small></p>
-                                    </li>
-                                </ul>
-                            </div>  */}
-    
-                            <hr />
-                
-                            <div className="mb-3">
-                                <h5>Get Cookies Delivered for Free</h5>
-                                <p className='lead'>
-                                    It&apos;s the end of a long day. You go through your wind down routine... wait you forgot snacks.
-                                </p>
-                                <p className='lead'>
-                                    We got you! We ran a Pop and didn&apos;t expect to love Berlin as much as we did. Crack Cookies is selling 
-                                    in Berlin until Tuesday the third of May. 
-                                </p>
-                                <p className='lead'>
-                                    To order your new favorite Cookies, click the &apos;Get Warm Cookies Delivered Button&apos;
-                                    and fill out the form. Share your personal referral code and <strong>get another order delivered for free.</strong>
-                                </p>
-                            </div>
-                            {/* Quantity Selection here */}
-                            <div>
 
-                            </div>    
-                            {/* This should be a different button */}
-                            {/* <RefCodeButton /> */}
 
                         </aside>
                     </div> 
@@ -155,41 +120,7 @@ export default function Home() {
             <article className="card mt-5">
                 <div className="card-body">
                     <div className="row">
-                        {/* Reviews */}
-                        {/* <aside className="col-md-6">
-                            <h5>Berlin Reviews</h5>
-                                <dl className="row">
-                                    <div>
-                                        <div className="row">
-                                            <div className="rounded-circle img-fluid col-md-3">
-                                                <Image  src={cookiesLogo} />
-                                            </div>
-                                            <div className="col-md-9">
-                                                <p className="description">I was satisfied... shit was expensive but nothing is like a fresh delivered cookie when your eyes are red and you can&apos;t make it past the door.</p>
-                                                <div className="row">
-                                                    <h6 className="title">Alex Lemke</h6>
-                                                    <small>Berlin, Schöneberg</small>   
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <hr/>
-                                    <div>
-                                        <div className="row">
-                                            <img className="rounded-circle img-fluid col-md-3" src="assets/img/1.jpg" maxWidth/>
-                                            <div className="col-md-9">
-                                                <p className="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
-                                                <h6 className="title">Ben Johnson</h6>
-                                                <small>Berlin, Schöneberg</small>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                
-                            </dl>
-                        </aside> */}
+                        
                         <aside className="col-md-6">
                             <h4>Cookies so good you might end up on the street</h4>
                             <h5 className={ styles.textGradient }>Freebase Strawberry Cheesecake Cookie</h5>
@@ -206,37 +137,29 @@ export default function Home() {
                                 </button>
                             </Link>
 
-                            {/* <ul className="list-dots mb-0">
-                                <li className={styles.noBullet}><strong>Chocolate Chip</strong> (The kind you dreamt about as a kid)</li>
-                                <li className={styles.noBullet}><strong>Oatmeal Raisin</strong> (For those of us with taste)</li>
-                                <li className={styles.noBullet}><strong>Snicker Doodle</strong> (Who knows what this is... it just tastes great)</li>
-                                <li className={styles.noBullet}><strong>Variety</strong> (For when you&apos;re feel indecisive)</li>
-                            </ul> */}
+                           
+                            <hr />
+                            <div>
+                                {/* <h4 className={ styles.gradientText }>Cookies so good you might end up on the street</h4> */}
+                                <h4 >Menu</h4>
+                                <h5 className='lead'>Freebase Strawberry Cheesecake Cookie</h5>
+                                <h5 className='lead'>Berhain Backroom Snickerdoodle</h5>
+                                <h5 className='lead'>Relapse Raisin Cookie</h5>
+                                <h5 className='lead'>Comedown Caramel Cookie</h5>
+                                <h5 className='lead'>Crackhead Chocolate Chip</h5> 
+                            </div>
                         </aside>
                     </div> 
-                    <hr />
-                    <div className="row">
-                        {/* <Link href="/checkout">
-                            <button className="btn btn-primary btn-lg btn-block">
-                                <h5>
-                                    Get yours&#128666;
-                                </h5>
-                            </button>
-                        </Link> */}
-                        <EmailSubmit />
-                    </div>
-                    <hr />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                 </div> 
             </article>
-            </div>
+            <hr />
+            <p className='lead'>
+                Somewhere deep in the Peruvian Rainforest, our farmers harvest the ingredients we need for your Cookies on Crack. Next our smugglers prepare our almost reliable smuggling routes across South America, the Atlantic and Europe to deliver the cookies. Then our plugs get them to you in Berlin. Hidden in between containers and cheeks we get them to you fresh and warm.  Enjoy your Cookies... and the rest of your night out or the end of your night.
+
+                </p> 
+            </div> 
+            {/* </article> */}
+            {/* </div> */}
             
 
         </section>

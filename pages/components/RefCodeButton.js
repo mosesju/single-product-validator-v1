@@ -2,34 +2,36 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { RWebShare } from "react-web-share";
 
+import styles from '../../public/styles/OutOfStock.module.css'
+
+
 
 export default function RefCodeButton() {
-    const [refCode, setRefCode] = useState('00000');
+    // const [refCode, setRefCode] = useState('00000');
 
-    useEffect(() =>{
-        setRefCode('00001')
-        // var result           = '';
-        // var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
-        // var charactersLength = characters.length;
-        // for ( var i = 0; i < length; i++ ) {
-        //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        // }
-        // console.log(result)
-        // setRefCode(result);
-    },[])
+    // useEffect(() =>{
+    //     setRefCode('00001')
+    //     // var result           = '';
+    //     // var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    //     // var charactersLength = characters.length;
+    //     // for ( var i = 0; i < length; i++ ) {
+    //     //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    //     // }
+    //     // console.log(result)
+    //     // setRefCode(result);
+    // },[])
 
     return (
         <div>
             <RWebShare
                 data={{
-                    text: "Cookies on Crack - Get your cookies delivered, tonight",
-                    url: "http://localhost:3000/",
+                    text: 'Finger Lickin\' Addicitn\'. One of your friends is trying to get you hooked... fuck it, give in.',
+                    url: "https://cookiesoncrack.com/checkout?refCode=zbg02",
                     title: "Cookies on Crack",
                 }}
                 onClick={() => console.log("shared successfully!")}
             >
-                {/* Share with your friends and get <strong>FREE COOKIES</strong> */}
-                <button className='btn-primary btn-block btn-lg' id="share-button">{ refCode } </button>
+                <button className='btn btn-outline-primary btn-block btn-lg' id="share-button">Share this page to get twice as many cookies delivered</button>
             </RWebShare>
         </div>
     )
