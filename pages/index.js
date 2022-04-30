@@ -87,9 +87,9 @@ export default function Home() {
                             </article> 
                             
                             {/* Email Collection + Share friends */}
-                            <div className="mb-4">
+                            {/* <div className="mb-4">
                                     <CheckoutButton />
-                                </div>
+                                </div> */}
 
                         </main>
                         <aside className="col-md-6">
@@ -98,9 +98,18 @@ export default function Home() {
                             </div>
                             <div className='d-flex justify-content-center'>
                                 <h2 className={`${styles.gradientText}`}>Try quittin&apos; you crackhead</h2>
-                                
                             </div>
-
+                            <div className='d-flex justify-content-center'>
+                                <CheckoutButton />
+                            </div>
+                            <div>
+                                <h4 >Menu</h4>
+                                <h5 className='lead'>Freebase Strawberry Cheesecake Cookie</h5>
+                                <h5 className='lead'>Berhain Backroom Snickerdoodle</h5>
+                                <h5 className='lead'>Relapse Raisin Cookie</h5>
+                                <h5 className='lead'>Comedown Caramel Cookie</h5>
+                                <h5 className='lead'>Crackhead Chocolate Chip</h5> 
+                            </div>
 
                         </aside>
                     </div> 
@@ -109,48 +118,14 @@ export default function Home() {
             <article className="card mt-5">
                 <div className="card-body">
                     <div className="row">
-                        
-                        <aside className="col-md-6">
-                            <h4>Cookies so good you might end up on the street</h4>
-                            <h5 className={ styles.textGradient }>Freebase Strawberry Cheesecake Cookie</h5>
-                            <h5 className={ styles.textGradient }>Berhain Backroom Snickerdoodle</h5>
-                            <h5 className={ styles.textGradient }>Relapse Raisin Cookie</h5>
-                            <h5 className={ styles.textGradient }>Comedown Caramel Cookie</h5>
-                            <h5 className={ styles.textGradient }>Crackhead Chocolate Chip</h5>
-
-                            <Link href="/checkout">
-                                <button className="btn btn-primary btn-lg btn-block">
-                                    <h5>
-                                        Get yours&#128666;
-                                    </h5>
-                                </button>
-                            </Link>
-
-                           
-                            <hr />
-                            <div>
-                                {/* <h4 className={ styles.gradientText }>Cookies so good you might end up on the street</h4> */}
-                                <h4 >Menu</h4>
-                                <h5 className='lead'>Freebase Strawberry Cheesecake Cookie</h5>
-                                <h5 className='lead'>Berhain Backroom Snickerdoodle</h5>
-                                <h5 className='lead'>Relapse Raisin Cookie</h5>
-                                <h5 className='lead'>Comedown Caramel Cookie</h5>
-                                <h5 className='lead'>Crackhead Chocolate Chip</h5> 
-                            </div>
-                        </aside>
+                    <p className='lead'>
+                        Somewhere deep in the Peruvian Rainforest, our farmers harvest the ingredients we need for your Cookies on Crack. Next our smugglers prepare our almost reliable smuggling routes across South America, the Atlantic and Europe to deliver the cookies. Then our plugs get them to you in Berlin. Hidden in between containers and cheeks we get them to you fresh and warm.  Enjoy your Cookies... and the rest of your night out or the end of your night.
+                    </p> 
                     </div> 
                 </div> 
             </article>
-            <hr />
-            <p className='lead'>
-                Somewhere deep in the Peruvian Rainforest, our farmers harvest the ingredients we need for your Cookies on Crack. Next our smugglers prepare our almost reliable smuggling routes across South America, the Atlantic and Europe to deliver the cookies. Then our plugs get them to you in Berlin. Hidden in between containers and cheeks we get them to you fresh and warm.  Enjoy your Cookies... and the rest of your night out or the end of your night.
-
-                </p> 
-            </div> 
-            {/* </article> */}
-            {/* </div> */}
             
-
+            </div> 
         </section>
         </main>
 
