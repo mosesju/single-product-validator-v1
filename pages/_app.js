@@ -2,18 +2,22 @@ import '../public/styles/globals.css'
 import Script from "next/script"
 
 function MyApp({ Component, pageProps }) {
+  // ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
+  // {``}
   return(
 
     <>
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></Script>
+      <Script src='https://www.googletagmanager.com/gtag/js?id=G-QQSKJ4XVVX'></Script>
       <Script id="google-analytics" strategy='afterInteractive'>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)}
           gtag('js', new Date());
   
-          gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
+          // gtag('config', );
+          
+          gtag('config', 'G-QQSKJ4XVVX');
         `}
         
       </Script>
