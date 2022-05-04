@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../public/styles/Home.module.css'
+import styles from '../../public/styles/Home.module.css'
 import Link from 'next/link'
 import Script from 'next/script'
 
@@ -10,11 +10,10 @@ import { Router } from 'next/router';
 import { useRouter } from 'next/router'
 
 // Local shit
-import coloredBackground from '../public/assets/images/colored-background.png'
-import RefCodeButton from './components/RefCodeButton'
-import Carousel from './components/Carousel'
-import EmailSubmit from './components/EmailSubmit'
-import CheckoutButton from './components/CheckoutButton'
+import RefCodeButton from '../components/RefCodeButton'
+import Carousel from '../components/Carousel'
+import EmailSubmit from '../components/EmailSubmit'
+import CheckoutButton from '../components/CheckoutButton'
 
 
 export default function Home() {
