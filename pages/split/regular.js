@@ -55,7 +55,17 @@ export default function Home() {
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue"></link>
         </Head>
 
-        <Script
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQSKJ4XVVX"></Script>
+        <Script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)}
+        gtag('js', new Date());
+
+        gtag('config', 'G-QQSKJ4XVVX');
+        </Script> */}
+
+        {/* <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
             strategy="afterInteractive"
         />
@@ -68,7 +78,7 @@ export default function Home() {
             gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
             `}
         </Script>
-        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossOrigin="anonymous"></Script>
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossOrigin="anonymous"></Script> */}
 
         <main className={styles.main}>
         <section className="section-content padding-y bg">

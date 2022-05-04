@@ -94,7 +94,7 @@ function CheckoutPage() {
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
 
         </Head>
-        <Script
+        {/* <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
             strategy="afterInteractive"
         />
@@ -106,7 +106,7 @@ function CheckoutPage() {
 
             gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
             `}
-        </Script>
+        </Script> */}
         
         <main className={styles.main}>
             <div className='container'>
