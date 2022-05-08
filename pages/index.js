@@ -15,6 +15,9 @@ import RefCodeButton from './components/RefCodeButton'
 import Carousel from './components/Carousel'
 import EmailSubmit from './components/EmailSubmit'
 import CheckoutButton from './components/CheckoutButton'
+import NavBar from './components/Navbar/NavBar'
+import MenuTitle from './components/Menu/MenuTitle'
+import MenuItem from './components/Menu/MenuItem'
 
 
 export default function Home() {
@@ -55,22 +58,8 @@ export default function Home() {
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></link>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue"></link>
         </Head>
-
-        {/* <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-            strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-            {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
-            `}
-        </Script> */}
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossOrigin="anonymous"></Script>
-
+        <NavBar />
         <main className={styles.main}>
         <section className="section-content padding-y bg">
             <div className="container">
@@ -79,9 +68,7 @@ export default function Home() {
                 <div className="card-body">
                     <div className="row">
                         <main className="col-md-6">
-                            <article>
-                                <Carousel />
-                            </article> 
+                            <Carousel />
                         </main>
                         <aside className="col-md-6">
                             <div className='d-flex justify-content-center'>
@@ -95,12 +82,12 @@ export default function Home() {
                             </div>
                             <div className='d-flex justify-content-center'>
                                 <div>
-                                    <h4 >Menu</h4>
-                                    <h5 className='lead'>Freebase Strawberry Cheesecake Cookie</h5>
-                                    <h5 className='lead'>Berghain Backroom Snickerdoodle</h5>
-                                    <h5 className='lead'>Relapse Raisin Cookie</h5>
-                                    <h5 className='lead'>Comedown Caramel Cookie</h5>
-                                    <h5 className='lead'>Crackhead Chocolate Chip</h5> 
+                                    <MenuTitle title='Menu'/>
+                                    <MenuItem item='Freebase Strawberry Cheesecake Cookie' />
+                                    <MenuItem item='Berghain Backroom Snickerdoodle' />
+                                    <MenuItem item='Relapse Raisin Cookie' />
+                                    <MenuItem item='Comedown Caramel Cookie' />
+                                    <MenuItem item='Crackhead Chocolate Chip' />
                                 </div>  
                             </div>
 

@@ -9,11 +9,13 @@ import Script from 'next/script'
 
 import { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form";
-import { createClient } from '@supabase/supabase-js'
-import { Router } from 'next/router';
+import { supabase } from '../lib/supbaseClient';
 
 import RefCodeButton from './components/RefCodeButton'
 import { RWebShare } from "react-web-share";
+import { supabaseClient } from '../lib/supbaseClient'
+import CheckoutForm from './components/CheckoutForm/CheckoutForm'
+import getQueryParams from '../utils/getQueryParams'
 
 
 
@@ -25,13 +27,12 @@ function CheckoutPage() {
     const [refLink, setRefLink] = useState('');
 
     const router = useRouter();
-    const supabaseUrl = 'https://fvgexbvyzbrwwvywxfpq.supabase.co'
-    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY
-    
+
+    // const supaBaseClient = subabase();
 
     const { register, handleSubmit } = useForm();
     const onSubmit = async (formData) => {
-        const supabaseClient = createClient(supabaseUrl, supabaseKey)
+        
 
         const { data, error } = await supabaseClient
         .from('Product Test')
@@ -62,8 +63,13 @@ function CheckoutPage() {
         })
 
     }
+    // const getQueryParams = (formData) => {
+    //     const router = useRouter()
+    //     console.log(router.query)
+    // }
 
     useEffect(()=>{
+        {getQueryParams()}
         const refNum = makeid(5);
         setRefCode(refNum)
         const message = "Send this code to Buy one Get one"
@@ -110,7 +116,11 @@ function CheckoutPage() {
         
         <main className={styles.main}>
             <div className='container'>
-                <form className="needs-validation" onSubmit={ handleSubmit(onSubmit) }>
+                {/* <CheckoutForm /> */}
+                <getQueryParams />
+                if item false, then render the component with cookie selection. Else render the other one
+                {/* <form className="needs-validation" onSubmit={ handleSubmit(onSubmit) }>
+                    <CheckoutForm />
                     <div className="row">    
                         <div className="col-md-7">
                             <h4 className={`mb-3 ${styles.gradientText}`}>Delivery Information</h4>
@@ -157,7 +167,6 @@ function CheckoutPage() {
                                     </div>
                                     
                                 </div>
-                                {/* className="col-md-4 mb-3" */}
                                 <div >
                                     <label htmlFor="notes">Notes</label>
                                     <input type="text" className="form-control" id="notes" placeholder="" required="" {...register("notes", { required: false})}/>
@@ -214,7 +223,7 @@ function CheckoutPage() {
                        
                     
                     </div>
-                </form>
+                </form> */}
             </div>
         </main>    
     </div>
