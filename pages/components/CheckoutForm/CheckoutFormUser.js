@@ -8,21 +8,32 @@ import { useState, useEffect } from 'react';
 
 import CookieSelect from './CookieSelect';
 import RefCodeButton from '../RefCodeButton';
+import CookieDescription from './CookieDescription';
 
 
 
 export default function CheckoutForm( { title } ) {
     const router = useRouter();
     const [queryParams, setQueryParams] = useState(false);
+    const [cookieName, setCookieName] = useState('');
     const { register, handleSubmit } = useForm();
     // This checks the query params and sets the state to true if there is an item
     const checkQueryParams = () => {
         const query = router.query;
         if(query.item) {
             setQueryParams(true);
-            console.log('query.item is true');
         } else {
-            console.log('query.item is false');
+            setQueryParams(false);
+        }
+    }
+    const getQueryParams = () => {
+        const query = router.query;
+        if(query.item) {
+            setCookieName(query.item)
+            console.log(cookieName)
+        }
+        else {
+            setCookieName('')
         }
     }
     const onSubmit = async (formData) => {
@@ -59,6 +70,7 @@ export default function CheckoutForm( { title } ) {
     }
     useEffect(() => {
         checkQueryParams();
+        getQueryParams();
     },[])
 
     return (
@@ -114,46 +126,43 @@ export default function CheckoutForm( { title } ) {
                             <label htmlFor="notes">Notes</label>
                             <input type="text" className="form-control" id="notes" placeholder="" required="" {...register("notes", { required: false})}/>
                         </div>
-                        <div className={styles.buttonSpacing}>
+                            
+                    </div>
+                    <div className="col-md-5">
+                        <div className="card">
+                            <div className="card-body">
+                                <div style={{width: '100%', height: '100%', position: 'relative'}}>
+                                    {/* <Image src={CookiesLogo} layout='fill'/> */}
+                                </div>
+                                <CookieDescription query={cookieName}/>
+                                {queryParams ? null : <CookieSelect register={register}/>}
+                                <div className={styles.selectorSpacing}>
+                                    <select className="form-select d-block w-100" id="country" {...register("quantity")}>
+                                        <option value="12">The Ounce (&euro;20 for 12 cookies)</option>
+                                        <option value="3">The 8 Ball  (&euro;7 for 3 cookies)</option>
+                                        <option value="6">The Quarter (&euro;12 for 6 cookies)</option>
+                                        <option value="18">The Plug (&euro;30 for 18 cookies)</option>
+                                        <option value="24">The Brick (&euro;36 for 24 cookies)</option>
+                                    </select> 
+                                </div>
+                                <div>
+                                    <label htmlFor="state">Use a Referral code to Buy One Get One</label>
+                                    <input type="text" className="form-control" {...register("discountCode")} />
+                                    <div className={styles.buttonSpacing}>
+                                        <RefCodeButton />
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+                <div className={styles.buttonSpacing}>
                             <div className='d-flex justify-content-center'>
                                 <input className="btn btn-primary btn-lg " type="submit" value="Continue to checkout"/>
                             </div>
-                        </div>    
-                    </div>
-                    <div className="col-md-5">
-            <div className="card">
-                <div className="card-body">
-                    <div style={{width: '100%', height: '100%', position: 'relative'}}>
-                        {/* <Image src={CookiesLogo} layout='fill'/> */}
-                    </div>
-                    <h4 className="card-title">Cookies on Crack</h4>
-                    <h6>&euro;20 for 12 cookies</h6>
-                    <p className="lead">
-                        Do you like cookies? Do you like crack? Then we got the perfect blend of both for you! Try out our different creations guaranteed to satisfy that itch. Soft and fresh we have something to fulfill every need of yours. Get them before we sell out… 
-                    </p>
-                    {queryParams ? null : <CookieSelect register={register}/>}
-                    <div className={styles.selectorSpacing}>
-                        <select className="form-select d-block w-100" id="country" {...register("quantity")}>
-                            <option value="12">The Ounce (&euro;20 for 20 cookies)</option>
-                            <option value="3">The 8 Ball  (&euro;7 for 3 cookies)</option>
-                            <option value="6">The Quarter (&euro;12 for 6 cookies)</option>
-                            <option value="18">The Plug (&euro;30 for 18 cookies)</option>
-                            <option value="24">The Brick (&euro;36 for 24 cookies)</option>
-                        </select> 
-                    </div>
-                    <div>
-                        <label htmlFor="state">Use a Referral code to Buy One Get One</label>
-                        <input type="text" className="form-control" {...register("discountCode")} />
-                        <div className={styles.buttonSpacing}>
-                            <RefCodeButton />
                         </div>
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-            </div>
             </form>
         </div>
     )

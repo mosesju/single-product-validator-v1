@@ -88,6 +88,7 @@ export default function Home() {
                                     <MenuItem item='Relapse Raisin Cookie' />
                                     <MenuItem item='Comedown Caramel Cookie' />
                                     <MenuItem item='Crackhead Chocolate Chip' />
+                                    <MenuItem item='Box of Surprises' />
                                 </div>  
                             </div>
 

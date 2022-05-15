@@ -110,7 +110,6 @@ function CheckoutPage() {
             <div className='container'>
                 {/* <CheckoutForm /> */}
                 {/* <getQueryParams /> */}
-                if item false, then render the component with cookie selection. Else render the other one
                 <CheckoutFormUser />
             </div>
         </main>    
