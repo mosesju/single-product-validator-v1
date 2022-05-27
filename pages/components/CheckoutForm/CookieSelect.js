@@ -2,6 +2,7 @@ import styles from '../../../public/styles/Home.module.css'
 import CookieOption from './CookieOption'
 
 export default function CookieSelect( { register } ) {
+    console.log(register)
     return(
         <div>
             <div className={styles.selectorSpacing}>

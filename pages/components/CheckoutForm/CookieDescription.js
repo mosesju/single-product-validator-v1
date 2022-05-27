@@ -11,34 +11,33 @@ export default function CookieDescription({ query }) {
     const setPageText = () =>{
     // This function will take the cookie name, and determine which name + description to use
     // for the various cookies using a switch statement
-        console.log(queryData)
         if(queryData == 'Relapse Raisin Cookie'){
             setCookieName('Relapse Raisin Cookie')
-            setCookieDescription('Relapse raisin description')
+            setCookieDescription('Ever almost quit? Well, that won\'t last. Relapse with our raisin cookies')
             setCookieImage('https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/logo_final.jpg')
         } else if(queryData =='Freebase Strawberry Cheesecake Cookie') {
             setCookieName('Freebase Strawberry Cheesecake Cookie')
-            setCookieDescription('Freebase description')
-            setCookieImage('https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/logo_final.jpg')
+            setCookieDescription('Warning. Highly addictive and may be planted by CIA')
+            setCookieImage('https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/strawberrycheesecakesandwich3.jpg')
 
         } else if (queryData == 'Berghain Backroom Snickerdoodle'){
-            setCookieName('Berghain Backroom Snickerdoodle')
-            setCookieDescription('Berghain description')
-            setCookieImage('https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/logo_final.jpg')
+            setCookieName('Berghain Backroom')
+            setCookieDescription('Have a wild weekend? Get peed on? This cookie feels you. It\'s at Berghain every weekend.')
+            setCookieImage('https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/nutellasandwich.jpg')
 
         } else if (queryData == 'Crackhead Chocolate Chip'){
             setCookieName('Crackhead Chocolate Chip')
-            setCookieDescription('Crackhead description')
-            setCookieImage('https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/logo_final.jpg')
+            setCookieDescription('The cookie that started it all. Have one too many and wake up under a bridge.')
+            setCookieImage('https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/whatsinthisccokie.jpg')
 
         } else if (queryData =='Comedown Caramel Cookie'){
             setCookieName('Comedown Caramel Cookie')
-            setCookieDescription('Comedown description')
+            setCookieDescription('When you\'re coming down after a wild weekend')
             setCookieImage('https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/logo_final.jpg')
 
         } else if (queryData =='Box of Surprises'){
             setCookieName('Box description')
-            setCookieDescription('Variety description')
+            setCookieDescription('No preference? Just get the box')
             setCookieImage('https://fvgexbvyzbrwwvywxfpq.supabase.co/storage/v1/object/public/product-test-public/cookie-test/logo_final.jpg')
 
         } 

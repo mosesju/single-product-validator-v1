@@ -29,9 +29,9 @@ export default function RefCodeButton() {
                     url: "https://cookiesoncrack.com/checkout?refCode=zbg02",
                     title: "Cookies on Crack",
                 }}
-                onClick={() => console.log("shared successfully!")}
+                // onClick={() => console.log("shared successfully!")}
             >
-                <button className='btn btn-outline-primary btn-block btn-lg' id="share-button">Share this for a Buy One Get One offer</button>
+                <button className='btn btn-outline-primary btn-block btn-lg' id="share-button">Share this for a Buy One Get One Offer</button>
             </RWebShare>
         </div>
     )

@@ -18,6 +18,7 @@ import CheckoutButton from './components/CheckoutButton'
 import NavBar from './components/Navbar/NavBar'
 import MenuTitle from './components/Menu/MenuTitle'
 import MenuItem from './components/Menu/MenuItem'
+import IGFollow from './components/IGFollow'
 
 
 export default function Home() {
@@ -90,12 +91,13 @@ export default function Home() {
                                     <MenuItem item='Crackhead Chocolate Chip' />
                                     <MenuItem item='Box of Surprises' />
                                 </div>  
+                                
                             </div>
-
                         </aside>
                     </div> 
                 </div> 
             </article>
+            <IGFollow />
             <article className="card mt-5">
                 <div className="card-body">
                     <div className="row">

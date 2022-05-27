@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import CookieSelect from './CookieSelect';
 import RefCodeButton from '../RefCodeButton';
 import CookieDescription from './CookieDescription';
+import IGFollow from '../IGFollow';
 
 
 
@@ -37,8 +38,6 @@ export default function CheckoutForm( { title } ) {
         }
     }
     const onSubmit = async (formData) => {
-        
-
         const { data, error } = await supabaseClient
         .from('Product Test')
         .insert([
@@ -53,17 +52,17 @@ export default function CheckoutForm( { title } ) {
                 city: formData.city,
                 notes: formData.notes,
                 discountCode: formData.discountCode,
-                refCode: refCode,
+                // refCode: refCode,
                 item: formData.item
             },
         ])
 
         router.push({
-            pathname: '/out-of-stock', 
+            pathname: '/order-confirm', 
             query: {
-                item: formData.product,
-                quantity: formData.quantity,
-                refCode: refCode
+                item: formData.item,
+                quantity: formData.quantity //,
+                // refCode: refCode
             }
         })
 
@@ -126,7 +125,7 @@ export default function CheckoutForm( { title } ) {
                             <label htmlFor="notes">Notes</label>
                             <input type="text" className="form-control" id="notes" placeholder="" required="" {...register("notes", { required: false})}/>
                         </div>
-                            
+                        {/* <IGFollow /> */}
                     </div>
                     <div className="col-md-5">
                         <div className="card">
