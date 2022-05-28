@@ -78,9 +78,9 @@ export default function Home() {
                             <div className='d-flex justify-content-center'>
                                 <h2 className={`${styles.gradientText}`}>Try quittin&apos; you crackhead</h2>
                             </div>
-                            <div className='d-flex justify-content-center'>
+                            {/* <div className='d-flex justify-content-center'>
                                 <CheckoutButton />
-                            </div>
+                            </div> */}
                             <div className='d-flex justify-content-center'>
                                 <div>
                                     <MenuTitle title='Menu'/>

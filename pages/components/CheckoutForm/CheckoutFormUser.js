@@ -10,6 +10,7 @@ import CookieSelect from './CookieSelect';
 import RefCodeButton from '../RefCodeButton';
 import CookieDescription from './CookieDescription';
 import IGFollow from '../IGFollow';
+import CookieOption from './CookieOption';
 
 
 
@@ -35,6 +36,26 @@ export default function CheckoutForm( { title } ) {
         }
         else {
             setCookieName('')
+        }
+    }
+    const conditionalRenderingCookieSelect = () =>{
+        // {queryParams ? null : <CookieSelect register={register}/>}
+        
+        if (queryParams.item) {
+            return (
+                    <div className={styles.selectorSpacing}>
+                        <select className="form-select d-block w-100" id="country" { ...register("item") } >
+                            <CookieOption value="Strawberry Cheesecake" name="Freebase Strawberry Cheesecake Cookie" />
+                            <CookieOption value="Snickerdoodle" name="Berghain Backroom Snickerdoodle" />
+                            <CookieOption value="Caramel" name="Comedown Caramel Cookie" />
+                            <CookieOption value="OatmealRaisin" name="Relapse Raisin" />
+                            <CookieOption value="Chocolate Chip" name="Crackhead Chocolate Chip" />
+                            <CookieOption value="Surprise Me" name="Surprise Me! Variety Pack" />
+                        </select>
+                    </div>
+            )
+        } else {
+            return(<div></div>)
         }
     }
     const onSubmit = async (formData) => {
@@ -134,7 +155,10 @@ export default function CheckoutForm( { title } ) {
                                     {/* <Image src={CookiesLogo} layout='fill'/> */}
                                 </div>
                                 <CookieDescription query={cookieName}/>
-                                {queryParams ? null : <CookieSelect register={register}/>}
+                                {/* {queryParams ? null : <CookieSelect register={register}/>} */}
+                                {
+                                    conditionalRenderingCookieSelect
+                                }
                                 <div className={styles.selectorSpacing}>
                                     <select className="form-select d-block w-100" id="country" {...register("quantity")}>
                                         <option value="12">The Ounce (&euro;20 for 12 cookies)</option>
